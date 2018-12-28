@@ -4,7 +4,7 @@
 
 import re, uuid
 import os
-import multiprocessing
+#import multiprocessing
 import pandas as pd
 import math
 import numpy as np
@@ -19,19 +19,9 @@ class PreProcessor(AbstractPreProcessor):
     def _process_data(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
 
-        num_processes = multiprocessing.cpu_count()
-        chunk_size = 100000
-        data = pd.read_csv(os.path.join(self.input_dir, "herbarium_data.csv"), header=0, chunksize=chunk_size*num_processes)
+        data = pd.read_csv(os.path.join(self.input_dir, "herbarium_data.csv"), header=0, engine='python' )
 
-        for chunk in data:
-            chunks = [chunk.ix[chunk.index[i:i + chunk_size]] for i in
-                      range(0, chunk.shape[0], chunk_size)]
-
-            with multiprocessing.Pool(processes=num_processes) as pool:
-                pool.map(self._transform_chunk, chunks)
-
-    def _transform_chunk(self, chunk):
-        self._transform_data(chunk).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
+        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
 
     def _transform_data(self, data):
 
