@@ -7,7 +7,6 @@ import re, uuid
 
 import os
 
-import multiprocessing
 import pandas as pd
 from preprocessor import AbstractPreProcessor
 
@@ -43,21 +42,12 @@ class PreProcessor(AbstractPreProcessor):
             'phenophase_descriptions': pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True,dtype='object')
         }
 
-        num_processes = multiprocessing.cpu_count()
-        chunk_size = 100000
         data = pd.read_csv(self.input_dir + FILES['data'], sep=';', header=0,
                            usecols=['s_id', 'genus_id', 'species_id', 'phase_id', 'year', 'day'],
-                           chunksize=chunk_size * num_processes, skipinitialspace=True)
+                           skipinitialspace=True,dtype='object')
 
-        for chunk in data:
-            chunks = [chunk.ix[chunk.index[i:i + chunk_size]] for i in
-                      range(0, chunk.shape[0], chunk_size)]
+        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
 
-            with multiprocessing.Pool(processes=num_processes) as pool:
-                pool.map(self._transform_chunk, chunks)
-
-    def _transform_chunk(self, chunk):
-        self._transform_data(chunk).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
 
     def _transform_data(self, data):
         joined_data = data \
@@ -66,6 +56,7 @@ class PreProcessor(AbstractPreProcessor):
             .merge(self.frames['stations'], left_on='s_id', right_on='s_id', how='left') \
             .merge(self.frames['phase'], left_on='phase_id', right_on='phase_id', how='left') \
             .merge(self.frames['phenophase_descriptions'], left_on='description', right_on='field', how='left')
+
 
         joined_data.fillna("", inplace=True)  # replace all null values
 
