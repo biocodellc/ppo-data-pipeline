@@ -10,8 +10,8 @@ fi
 python ../ontology-data-pipeline/process.py \
     -v --drop_invalid \
     $PROJECT \
-    data/$PROJECT/input \
-    data/$PROJECT/output \
+    data/$PROJECT/input/ \
+    data/$PROJECT/output/ \
     file:/Users/jdeck/IdeaProjects/ppo-data-pipeline/config/ppo-merged-reasoned.owl \
-    config \
-    projects \
+    config/ \
+    projects/ \
