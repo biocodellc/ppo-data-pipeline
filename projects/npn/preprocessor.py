@@ -24,10 +24,23 @@ class PreProcessor(AbstractPreProcessor):
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
                                             usecols=['Dataset_ID', 'Source'], dtype='object')
 
-        data = pd.read_csv(os.path.join(self.input_dir, "npn_observations_data.csv"), header=0, engine='python')
+        chunk_size = 100000
 
-        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
-#
+        data = pd.read_csv(
+            os.path.join(self.input_dir, "npn_observations_data.csv"), 
+            header=0, 
+            engine='python', 
+            dtype='object', 
+            chunksize = chunk_size)
+
+        for chunk in data:
+            self._transform_data(chunk).to_csv(
+                self.output_file, 
+                columns=self.headers, 
+                mode='a', 
+                header=False, 
+                index=False)
+
     def _transform_data(self, data):
         # Add an index name
         # data.index.name = 'record_id'
@@ -63,7 +76,16 @@ class PreProcessor(AbstractPreProcessor):
         # drop duplicate ObservationIDs
         data.drop_duplicates('observation_id', inplace=True)
 
-        return data.rename(columns=COLUMNS_MAP)
+        # filling in remaining column names, even though there is no data
+        data['individualID'] = ''
+        data['lower_count_wholeplant'] = ''
+        data['upper_count_wholeplant'] = ''
+        data['lower_count_partplant'] = ''
+        data['upper_count_partplant'] = ''
+
+        data = data.rename(columns=COLUMNS_MAP)
+
+        return data
 
     # Get true/false value for related force_default column in phenophase_descriptions and override the intensity_value
     # with -9999.  Force defaults overrides intensity_value descriptions with default values for phenophases where

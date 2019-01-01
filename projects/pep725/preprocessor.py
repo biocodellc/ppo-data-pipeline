@@ -42,11 +42,19 @@ class PreProcessor(AbstractPreProcessor):
             'phenophase_descriptions': pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True,dtype='object')
         }
 
+        chunk_size = 100000
+
         data = pd.read_csv(self.input_dir + FILES['data'], sep=';', header=0,
                            usecols=['s_id', 'genus_id', 'species_id', 'phase_id', 'year', 'day'],
-                           skipinitialspace=True,dtype='object')
+                           skipinitialspace=True,dtype='object', chunksize= chunk_size)
 
-        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
+        for chunk in data:
+            self._transform_data(chunk).to_csv(
+                self.output_file, 
+                columns=self.headers, 
+                mode='a', 
+                header=False, 
+                index=False)
 
 
     def _transform_data(self, data):
@@ -68,7 +76,12 @@ class PreProcessor(AbstractPreProcessor):
         joined_data['source'] = 'PEP725'
         joined_data['basis_of_record'] = 'HumanObservation'
 
-        return joined_data.rename(columns=COLUMNS_MAP)
+        joined_data['individualID'] = ''
+        joined_data['sub_source'] = ''
+        
+        joined_data = joined_data.rename(columns=COLUMNS_MAP)
+
+        return joined_data
 
     def _filter_data(self, data):
         # we want to drop all data with a description in phenohase_descriptions.csv which is missing a defined_by
