@@ -1,0 +1,5 @@
+data/*
+**/*.pyc
+**/.cache/*
+**/__pycache__/*
+.python-version
