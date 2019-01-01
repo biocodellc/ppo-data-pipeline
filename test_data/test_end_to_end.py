@@ -4,46 +4,46 @@ import os
 import pandas
 
 # list of columns we are expecting and will match values on
-COLUMNS = ['dayOfYear','year','latitude','longitude','genus','specificEpithet','scientificName','lower_count','upper_count','lower_percent','upper_percent','source','subSource','adjustedNcepReanalysisMonthlyMeanTemp','plantStructurePresenceTypes']
+COLUMNS = ['dayOfYear','year','latitude','longitude','genus','specificEpithet','scientificName','basisOfRecord','lower_count','individualID','eventRemarks','lower_count_partplant','upper_count_partplant','lower_count_wholeplant','upper_count_wholeplant','lower_percent_partplant','upper_percent_partplant','lower_percent_wholeplant','upper_percent_wholeplant','source','subSource','plantStructurePresenceTypes']
 Message = ""
 
 # This script expected to executed from the ppo-data-pipeline root
-@pytest.mark.parametrize("project", [ "npn", "pep725", "asu", "neon"]) 
+@pytest.mark.parametrize("project", [ "npn", "pep725", "herbarium", "neon"]) 
 def test_end_to_end(project):
     global Message
     #base_dir = os.path.dirname(__file__)
 
     # set the project, always preceeded with test_
-    project_name = 'test_'+project
+    project_name = project
     # set the project base dir
-    project_base_dir = os.path.join('test_data','projects') 
+    project_base_dir = os.path.join('projects') 
     # set the project base, based on project name
-    project_base = 'test_data'+'.projects.'+project_name #python name reference for dynamic class loading
+    project_base = '.projects.'+project_name #python name reference for dynamic class loading
     # set the project output path
-    project_path = os.path.join(project_base_dir,project_name)
+    project_path = os.path.join(project_base_dir)
     # output directory
-    output_path = os.path.join('test_data','data',project_name,'output')
+    output_path = os.path.join('test_data',project_name,'output')
     # input directory
-    input_path = os.path.join('test_data','data',project_name,'input')
+    input_path = os.path.join('test_data',project_name,'input')
     # path pointing to onfiguration files. we do not use the main project configuration directory 
     # for the application itself as that may contain changes we don't wish to test.
     # to test changes in configuration files the relevant config files should be copied here
-    config_path = os.path.join('test_data','config')
+    config_path = os.path.join('config')
     # reference to ontology. Do NOT change this as it will interfere with rest results. it is Okay if ontology is
     # out of date.  Here we reference a specific release of the ontology itself so it should be static
-    ontology_url = 'https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2017-10-20/ppo.owl'
+    ontology_url = 'https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl'
     #ontology_url = os.path.join('file:/',config_path,'ppo.owl')
     # file containing actual results we want to compare to
     actual_results_file_name = os.path.join(output_path,"output_reasoned_csv","data_1.ttl.csv")
     # file containing expected results
-    expected_results_file_name = os.path.join('test_data','test_'+project+'_results.csv')
+    expected_results_file_name = os.path.join('test_data',project+'_results.csv')
     # name of file to store output text, if test fails we can learn more information in this file
     output_file = 'output.txt'
 
     # The ontology is hard-coded here so tests can pass even if ontology is changed.
     # The presence here of an up to data ontology is not necessary since we're just 
     # performing tests on pipeline functionality
-    cmd = ['python', './process.py', project_name, output_path, '--input_dir', input_path,'--config_dir',config_path,'--ontology',ontology_url,'--base_dir',project_path,'--project_base',project_base ]
+    cmd = ['python', '../ontology-data-pipeline/process.py', project_name, input_path, output_path, ontology_url, config_path,project_path]
 
     # setup process to execute given command
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

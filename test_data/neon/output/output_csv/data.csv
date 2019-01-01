@@ -1,0 +1,3 @@
+record_id,individualID,scientific_name,genus,specific_epithet,year,day_of_year,latitude,longitude,source,sub_source,phenophase_name,basis_of_record,lower_count_wholeplant,upper_count_wholeplant,lower_count_partplant,upper_count_partplant,lower_percent_wholeplant,upper_percent_wholeplant,lower_percent_partplant,upper_percent_partplant
+21a7e02c-3feb-4718-92e6-e53e0def0d91,NEON.PLA.D19.HEAL.06161,Ledum palustre L.,Ledum,palustre,2017,152,63.873096,-149.216481,NEON,,Young leaves,HumanObservation,,0.0,,0.0,,,,
+cf5646a1-3156-4cfb-ad0e-f75050f7b849,NEON.PLA.D19.HEAL.06110,Betula glandulosa/nana,Betula,glandulosa/nana,2017,152,63.873096,-149.216481,NEON,,Leaves,HumanObservation,,,,,,,,

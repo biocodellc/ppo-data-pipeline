@@ -20,63 +20,50 @@ COLUMNS_MAP = {
 class PreProcessor(AbstractPreProcessor):
     def _process_data(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
+
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
                                             usecols=['Dataset_ID', 'Source'], dtype='object')
 
-        num_processes = multiprocessing.cpu_count()
-        chunk_size = 100000
-        df = pd.read_csv(os.path.join(self.input_dir, "npn_observations_data.csv"), header=0, chunksize=chunk_size*num_processes)
-        #df = pd.read_csv(os.path.join(self.input_dir, "test_data.csv"), header=0, chunksize=chunk_size)
+        data = pd.read_csv(os.path.join(self.input_dir, "npn_observations_data.csv"), header=0, engine='python')
 
-        for chunk in df:
-            chunks = [chunk.ix[chunk.index[i:i + chunk_size]] for i in
-                range(0, chunk.shape[0], chunk_size)]
-
-            with multiprocessing.Pool(processes=num_processes) as pool:
-                pool.map(self._transform_chunk, chunks)
-
-#        for chunk in df:
-#            print("\tprocessing next {} records".format(len(chunk)))
-
-    def _transform_chunk(self, chunk):
-        self._transform_data(chunk).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
-
-    def _transform_data(self, df):
+        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
+#
+    def _transform_data(self, data):
         # Add an index name
-        # df.index.name = 'record_id'
+        # data.index.name = 'record_id'
 
         # drop all records where the user is unsure of what was coded (this is phenophase_status = -1)
-        df = df[df.phenophase_status != -1]
+        data = data[data.phenophase_status != -1]
 
         # Handle cases where we want to force a default intensity value 
         # First, fill out the force_default_value column with False where there is no value
         self.descriptions['force_default_value'] = self.descriptions['force_default_value'].fillna(False)
         # Second, apply, row by row a filter that sets the intensity_value to -9999 when we want to force defaults
-        df = df.apply(lambda row: self._force_defaults(row), axis=1)
+        data = data.apply(lambda row: self._force_defaults(row), axis=1)
 
         # map counts from intensity_value table to upper and lower count/percents
         cols = ['value', 'lower_count', 'upper_count', 'lower_percent', 'upper_percent']
-        df = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', df,
+        data = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', data,
                              'intensity_value')
 
         # when intensity_value != -9999 set upper/lower counts 
-        df = df.apply(lambda row: self._set_defaults(row), axis=1)
+        data = data.apply(lambda row: self._set_defaults(row), axis=1)
 
         # set the source
-        df['source'] = 'USA-NPN'
-        df['basis_of_record'] = 'HumanObservation'
-        df = df.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')
+        data['source'] = 'USA-NPN'
+        data['basis_of_record'] = 'HumanObservation'
+        data = data.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')
 
         # Normalize Date to just Year. we don't need to store actual date because we use only Year + DayOfYear
-        df['year'] = pd.DatetimeIndex(df['observation_date']).year
+        data['year'] = pd.DatetimeIndex(data['observation_date']).year
 
         # Create ScientificName
-        df['scientific_name'] = df['genus'] + ' ' + df['species']
+        data['scientific_name'] = data['genus'] + ' ' + data['species']
 
         # drop duplicate ObservationIDs
-        df.drop_duplicates('observation_id', inplace=True)
+        data.drop_duplicates('observation_id', inplace=True)
 
-        return df.rename(columns=COLUMNS_MAP)
+        return data.rename(columns=COLUMNS_MAP)
 
     # Get true/false value for related force_default column in phenophase_descriptions and override the intensity_value
     # with -9999.  Force defaults overrides intensity_value descriptions with default values for phenophases where

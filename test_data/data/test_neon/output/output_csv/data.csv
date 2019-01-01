@@ -1,3 +1,0 @@
-record_id,scientific_name,genus,specific_epithet,year,day_of_year,latitude,longitude,source,sub_source,phenophase_name,lower_count,upper_count,lower_percent,upper_percent,adjusted_ncep_reanalysis_monthly_mean_temp
-21a7e02c-3feb-4718-92e6-e53e0def0d91,Ledum palustre L.,Ledum,palustre,2017,152,63.873096,-149.21648100000004,NEON,,Young leaves,,0.0,,,1.6
-cf5646a1-3156-4cfb-ad0e-f75050f7b849,Betula glandulosa/nana,Betula,glandulosa/nana,2017,152,63.873096,-149.21648100000004,NEON,,Leaves,,,75.0,94.0,1.6
