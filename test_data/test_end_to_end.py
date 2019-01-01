@@ -4,7 +4,7 @@ import os
 import pandas
 
 # list of columns we are expecting and will match values on
-COLUMNS = ['dayOfYear','year','latitude','longitude','genus','specificEpithet','scientificName','basisOfRecord','lower_count','individualID','eventRemarks','lower_count_partplant','upper_count_partplant','lower_count_wholeplant','upper_count_wholeplant','lower_percent_partplant','upper_percent_partplant','lower_percent_wholeplant','upper_percent_wholeplant','source','subSource','plantStructurePresenceTypes']
+COLUMNS = ['dayOfYear','year','latitude','longitude','genus','specificEpithet','scientificName','basisOfRecord','individualID','eventRemarks','lower_count_partplant','upper_count_partplant','lower_count_wholeplant','upper_count_wholeplant','lower_percent_partplant','upper_percent_partplant','lower_percent_wholeplant','upper_percent_wholeplant','source','subSource','plantStructurePresenceTypes']
 Message = ""
 
 # This script expected to executed from the ppo-data-pipeline root

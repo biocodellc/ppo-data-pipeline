@@ -7,7 +7,7 @@
 @base <urn:importInstance> .
 
 <urn:importInstance> rdf:type owl:Ontology ;
-                      owl:imports <https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2017-10-20/ppo.owl> .
+                      owl:imports <https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl> .
 
 #################################################################
 #    Object Properties
@@ -23,6 +23,14 @@
 
 ###  http://purl.obolibrary.org/obo/PPO_0000008
 <http://purl.obolibrary.org/obo/PPO_0000008> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0000014
+<http://purl.obolibrary.org/obo/PPO_0000014> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0000015
+<http://purl.obolibrary.org/obo/PPO_0000015> rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000080
@@ -62,6 +70,11 @@
                                        rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/EventID> .
 
 
+###  http://rs.tdwg.org/dwc/terms/basisOfRecord
+<http://rs.tdwg.org/dwc/terms/basisOfRecord> rdf:type owl:DatatypeProperty ;
+                                             rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/basisOfRecord> .
+
+
 ###  http://rs.tdwg.org/dwc/terms/decimalLatitude
 <http://rs.tdwg.org/dwc/terms/decimalLatitude> rdf:type owl:DatatypeProperty ;
                                                rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/decimalLatitude> .
@@ -72,14 +85,19 @@
                                                 rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/decimalLongitude> .
 
 
+###  http://rs.tdwg.org/dwc/terms/eventRemarks
+<http://rs.tdwg.org/dwc/terms/eventRemarks> rdf:type owl:DatatypeProperty ;
+                                            rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/eventRemarks> .
+
+
 ###  http://rs.tdwg.org/dwc/terms/genus
 <http://rs.tdwg.org/dwc/terms/genus> rdf:type owl:DatatypeProperty ;
                                      rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/genus> .
 
 
-###  http://rs.tdwg.org/dwc/terms/measurementValue
-<http://rs.tdwg.org/dwc/terms/measurementValue> rdf:type owl:DatatypeProperty ;
-                                                rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/measurementValue> .
+###  http://rs.tdwg.org/dwc/terms/individualID
+<http://rs.tdwg.org/dwc/terms/individualID> rdf:type owl:DatatypeProperty ;
+                                            rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/individualID> .
 
 
 ###  http://rs.tdwg.org/dwc/terms/scientificName
@@ -116,6 +134,10 @@ rdf:type rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://purl.obolibrary.org/obo/IAO_0000027
+<http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000109
 <http://purl.obolibrary.org/obo/IAO_0000109> rdf:type owl:Class .
 
@@ -124,16 +146,20 @@ rdf:type rdf:type owl:DatatypeProperty ;
 <http://purl.obolibrary.org/obo/PO_0000003> rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/PPO_0002000
-<http://purl.obolibrary.org/obo/PPO_0002000> rdf:type owl:Class .
+###  http://purl.obolibrary.org/obo/PPO_0000015
+<http://purl.obolibrary.org/obo/PPO_0000015> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0007004
+<http://purl.obolibrary.org/obo/PPO_0007004> rdf:type owl:Class .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://n2t.net/ark:/21547/Amh219641e8f-a0f5-4b79-b35e-1a654a0f54a4
-<http://n2t.net/ark:/21547/Amh219641e8f-a0f5-4b79-b35e-1a654a0f54a4> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amh206bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<http://n2t.net/ark:/21547/Amh206bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
@@ -145,12 +171,12 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk219641e8f-a0f5-4b79-b35e-1a654a0f54a4> .
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk206bc6ad3-0dc8-4cf5-af70-136582ff2d19> .
 
 
-###  http://n2t.net/ark:/21547/Amh221454742-c7d2-4008-903d-748c008c2c92
-<http://n2t.net/ark:/21547/Amh221454742-c7d2-4008-903d-748c008c2c92> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amh29f1b663f-8ea1-404e-8525-572c323c0596
+<http://n2t.net/ark:/21547/Amh29f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
@@ -162,12 +188,12 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk221454742-c7d2-4008-903d-748c008c2c92> .
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/9f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk29f1b663f-8ea1-404e-8525-572c323c0596> .
 
 
-###  http://n2t.net/ark:/21547/Amh2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0
-<http://n2t.net/ark:/21547/Amh2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amh2c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<http://n2t.net/ark:/21547/Amh2c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
@@ -179,12 +205,12 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> .
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk2c7a0dbdb-5212-46b1-bdd7-9360143ae455> .
 
 
-###  http://n2t.net/ark:/21547/Amh291757f87-8515-4519-bca6-464dd687c34a
-<http://n2t.net/ark:/21547/Amh291757f87-8515-4519-bca6-464dd687c34a> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amh2d7832172-c554-45c4-b6a4-3a7d111ab3da
+<http://n2t.net/ark:/21547/Amh2d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
@@ -196,12 +222,12 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk291757f87-8515-4519-bca6-464dd687c34a> .
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk2d7832172-c554-45c4-b6a4-3a7d111ab3da> .
 
 
-###  http://n2t.net/ark:/21547/Amh2fcc9af43-5e31-42e0-bf18-ab34ce83f83c
-<http://n2t.net/ark:/21547/Amh2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amh2f0709998-917e-451a-9bac-64c3bc095263
+<http://n2t.net/ark:/21547/Amh2f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
@@ -213,183 +239,378 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> .
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Amk2f0709998-917e-451a-9bac-64c3bc095263> .
 
 
-###  http://n2t.net/ark:/21547/Ami219641e8f-a0f5-4b79-b35e-1a654a0f54a4
-<http://n2t.net/ark:/21547/Ami219641e8f-a0f5-4b79-b35e-1a654a0f54a4> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Ami206bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<http://n2t.net/ark:/21547/Ami206bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/BCO_0000003> ,
                                                                               <http://purl.obolibrary.org/obo/BFO_0000003> ,
                                                                               <http://purl.obolibrary.org/obo/BFO_0000015> ,
                                                                               <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                                              <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                              <http://purl.obolibrary.org/obo/PPO_0007004> ,
                                                                               <http://rs.tdwg.org/dwc/terms/Event> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Amk219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "19641e8f-a0f5-4b79-b35e-1a654a0f54a4"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "52.2167"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "4.63333"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 43 ;
-                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
-                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Ami221454742-c7d2-4008-903d-748c008c2c92
-<http://n2t.net/ark:/21547/Ami221454742-c7d2-4008-903d-748c008c2c92> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
-                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                                              <http://purl.obolibrary.org/obo/PPO_0002000> ,
-                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Amk221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "21454742-c7d2-4008-903d-748c008c2c92"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "53.1667"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "6.86667"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 42 ;
-                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
-                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Ami2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0
-<http://n2t.net/ark:/21547/Ami2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
-                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                                              <http://purl.obolibrary.org/obo/PPO_0002000> ,
-                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Amk2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "905ab4cf-fafa-49d9-b054-f22e0cd8e6e0"^^xsd:string ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "06bc6ad3-0dc8-4cf5-af70-136582ff2d19"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/decimalLatitude> "51.5667"^^xsd:float ;
                                                                      <http://rs.tdwg.org/dwc/terms/decimalLongitude> "3.55"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 44 ;
-                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
-                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Ami291757f87-8515-4519-bca6-464dd687c34a
-<http://n2t.net/ark:/21547/Ami291757f87-8515-4519-bca6-464dd687c34a> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
-                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                                              <http://purl.obolibrary.org/obo/PPO_0002000> ,
-                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Amk291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "91757f87-8515-4519-bca6-464dd687c34a"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "52.2167"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "4.63333"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 41 ;
-                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
-                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Ami2fcc9af43-5e31-42e0-bf18-ab34ce83f83c
-<http://n2t.net/ark:/21547/Ami2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
-                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
-                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                                              <http://purl.obolibrary.org/obo/PPO_0002000> ,
-                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Amk2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "fcc9af43-5e31-42e0-bf18-ab34ce83f83c"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "51.5667"^^xsd:float ;
-                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "3.55"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/eventRemarks> "Beginnin of flowering: first flowers open (sporadically)"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 39 ;
                                                                      <http://rs.tdwg.org/dwc/terms/year> 1868 ;
                                                                      <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
 
 
-###  http://n2t.net/ark:/21547/Amj219641e8f-a0f5-4b79-b35e-1a654a0f54a4
-<http://n2t.net/ark:/21547/Amj219641e8f-a0f5-4b79-b35e-1a654a0f54a4> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Ami29f1b663f-8ea1-404e-8525-572c323c0596
+<http://n2t.net/ark:/21547/Ami29f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/BCO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                                              <http://purl.obolibrary.org/obo/PPO_0007004> ,
+                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/9f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "9f1b663f-8ea1-404e-8525-572c323c0596"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "52.2167"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "4.63333"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/eventRemarks> "Beginnin of flowering: first flowers open (sporadically)"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 43 ;
+                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
+                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Ami2c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<http://n2t.net/ark:/21547/Ami2c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/BCO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                                              <http://purl.obolibrary.org/obo/PPO_0007004> ,
+                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "c7a0dbdb-5212-46b1-bdd7-9360143ae455"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "52.2167"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "4.63333"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/eventRemarks> "Beginnin of flowering: first flowers open (sporadically)"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 41 ;
+                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
+                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Ami2d7832172-c554-45c4-b6a4-3a7d111ab3da
+<http://n2t.net/ark:/21547/Ami2d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/BCO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                                              <http://purl.obolibrary.org/obo/PPO_0007004> ,
+                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "d7832172-c554-45c4-b6a4-3a7d111ab3da"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "53.1667"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "6.86667"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/eventRemarks> "Beginnin of flowering: first flowers open (sporadically)"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 42 ;
+                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
+                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Ami2f0709998-917e-451a-9bac-64c3bc095263
+<http://n2t.net/ark:/21547/Ami2f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/BCO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000003> ,
+                                                                              <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                                              <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                                              <http://purl.obolibrary.org/obo/PPO_0007004> ,
+                                                                              <http://rs.tdwg.org/dwc/terms/Event> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amj2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/EventID> "f0709998-917e-451a-9bac-64c3bc095263"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLatitude> "51.5667"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/decimalLongitude> "3.55"^^xsd:float ;
+                                                                     <http://rs.tdwg.org/dwc/terms/eventRemarks> "Beginnin of flowering: first flowers open (sporadically)"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/startDayOfYear> 44 ;
+                                                                     <http://rs.tdwg.org/dwc/terms/year> 1868 ;
+                                                                     <http://purl.org/dc/elements/1.1/creator> "PEP725"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Amj206bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<http://n2t.net/ark:/21547/Amj206bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/IAO_0000109> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> "1.0"^^xsd:float .
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
-###  http://n2t.net/ark:/21547/Amj221454742-c7d2-4008-903d-748c008c2c92
-<http://n2t.net/ark:/21547/Amj221454742-c7d2-4008-903d-748c008c2c92> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amj29f1b663f-8ea1-404e-8525-572c323c0596
+<http://n2t.net/ark:/21547/Amj29f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/IAO_0000109> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> "1.0"^^xsd:float .
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/9f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
-###  http://n2t.net/ark:/21547/Amj2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0
-<http://n2t.net/ark:/21547/Amj2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amj2c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<http://n2t.net/ark:/21547/Amj2c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/IAO_0000109> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> "1.0"^^xsd:float .
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
-###  http://n2t.net/ark:/21547/Amj291757f87-8515-4519-bca6-464dd687c34a
-<http://n2t.net/ark:/21547/Amj291757f87-8515-4519-bca6-464dd687c34a> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amj2d7832172-c554-45c4-b6a4-3a7d111ab3da
+<http://n2t.net/ark:/21547/Amj2d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/IAO_0000109> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> "1.0"^^xsd:float .
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
-###  http://n2t.net/ark:/21547/Amj2fcc9af43-5e31-42e0-bf18-ab34ce83f83c
-<http://n2t.net/ark:/21547/Amj2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amj2f0709998-917e-451a-9bac-64c3bc095263
+<http://n2t.net/ark:/21547/Amj2f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/IAO_0000109> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> "1.0"^^xsd:float .
+                                                                     <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Ami2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
-###  http://n2t.net/ark:/21547/Amk219641e8f-a0f5-4b79-b35e-1a654a0f54a4
-<http://n2t.net/ark:/21547/Amk219641e8f-a0f5-4b79-b35e-1a654a0f54a4> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amk206bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<http://n2t.net/ark:/21547/Amk206bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh219641e8f-a0f5-4b79-b35e-1a654a0f54a4> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Amk221454742-c7d2-4008-903d-748c008c2c92
-<http://n2t.net/ark:/21547/Amk221454742-c7d2-4008-903d-748c008c2c92> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh221454742-c7d2-4008-903d-748c008c2c92> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Amk2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0
-<http://n2t.net/ark:/21547/Amk2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh2905ab4cf-fafa-49d9-b054-f22e0cd8e6e0> ;
-                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
-                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
-
-
-###  http://n2t.net/ark:/21547/Amk291757f87-8515-4519-bca6-464dd687c34a
-<http://n2t.net/ark:/21547/Amk291757f87-8515-4519-bca6-464dd687c34a> rdf:type owl:NamedIndividual ,
-                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami291757f87-8515-4519-bca6-464dd687c34a> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh291757f87-8515-4519-bca6-464dd687c34a> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/genus> "Galanthus"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/scientificName> "Galanthus nivalis"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/specificEpithet> "nivalis"^^xsd:string .
 
 
-###  http://n2t.net/ark:/21547/Amk2fcc9af43-5e31-42e0-bf18-ab34ce83f83c
-<http://n2t.net/ark:/21547/Amk2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> rdf:type owl:NamedIndividual ,
+###  http://n2t.net/ark:/21547/Amk29f1b663f-8ea1-404e-8525-572c323c0596
+<http://n2t.net/ark:/21547/Amk29f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
-                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh2fcc9af43-5e31-42e0-bf18-ab34ce83f83c> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Amk2c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<http://n2t.net/ark:/21547/Amk2c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/genus> "Galanthus"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/scientificName> "Galanthus nivalis"^^xsd:string ;
                                                                      <http://rs.tdwg.org/dwc/terms/specificEpithet> "nivalis"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Amk2d7832172-c554-45c4-b6a4-3a7d111ab3da
+<http://n2t.net/ark:/21547/Amk2d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  http://n2t.net/ark:/21547/Amk2f0709998-917e-451a-9bac-64c3bc095263
+<http://n2t.net/ark:/21547/Amk2f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.obolibrary.org/obo/PO_0000003> ;
+                                                                     <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amh2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  urn:partPlant/c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<urn:partPlant/c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                     <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Amk2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                     <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/genus> "Galanthus"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Galanthus nivalis"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "nivalis"^^xsd:string .
+
+
+###  urn:partPlant/d7832172-c554-45c4-b6a4-3a7d111ab3da
+<urn:partPlant/d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                     <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Amk2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                     <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  urn:partPlant/f0709998-917e-451a-9bac-64c3bc095263
+<urn:partPlant/f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                     <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Amk2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                     <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  urn:partPlant/06bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<urn:partPlant/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                     <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Amk206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                     <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/genus> "Galanthus"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Galanthus nivalis"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "nivalis"^^xsd:string .
+
+
+###  urn:partPlant/9f1b663f-8ea1-404e-8525-572c323c0596
+<urn:partPlant/9f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
+                                                              <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                                                     <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Ami29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                     <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Amk29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                     <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/9f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                     <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/genus> "Corylus"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/scientificName> "Corylus avellana"^^xsd:string ;
+                                                     <http://rs.tdwg.org/dwc/terms/specificEpithet> "avellana"^^xsd:string .
+
+
+###  urn:partPlantStructurePresence/c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<urn:partPlantStructurePresence/c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002032> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002033> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002035> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002323> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002324> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                      <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/c7a0dbdb-5212-46b1-bdd7-9360143ae455> .
+
+
+###  urn:partPlantStructurePresence/d7832172-c554-45c4-b6a4-3a7d111ab3da
+<urn:partPlantStructurePresence/d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002032> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002033> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002035> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002323> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002324> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                      <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/d7832172-c554-45c4-b6a4-3a7d111ab3da> .
+
+
+###  urn:partPlantStructurePresence/f0709998-917e-451a-9bac-64c3bc095263
+<urn:partPlantStructurePresence/f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002032> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002033> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002035> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002323> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002324> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                      <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/f0709998-917e-451a-9bac-64c3bc095263> .
+
+
+###  urn:partPlantStructurePresence/06bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<urn:partPlantStructurePresence/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002032> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002033> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002035> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002323> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002324> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                      <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> .
+
+
+###  urn:partPlantStructurePresence/9f1b663f-8ea1-404e-8525-572c323c0596
+<urn:partPlantStructurePresence/9f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002025> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002026> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002032> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002033> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002035> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002323> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002324> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002330> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002331> ,
+                                                                               <http://purl.obolibrary.org/obo/PPO_0002333> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amj29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                      <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/9f1b663f-8ea1-404e-8525-572c323c0596> .
+
+
+###  urn:wholePlantMeasurementDatum/c7a0dbdb-5212-46b1-bdd7-9360143ae455
+<urn:wholePlantMeasurementDatum/c7a0dbdb-5212-46b1-bdd7-9360143ae455> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amj2c7a0dbdb-5212-46b1-bdd7-9360143ae455> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
+
+
+###  urn:wholePlantMeasurementDatum/d7832172-c554-45c4-b6a4-3a7d111ab3da
+<urn:wholePlantMeasurementDatum/d7832172-c554-45c4-b6a4-3a7d111ab3da> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amj2d7832172-c554-45c4-b6a4-3a7d111ab3da> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
+
+
+###  urn:wholePlantMeasurementDatum/f0709998-917e-451a-9bac-64c3bc095263
+<urn:wholePlantMeasurementDatum/f0709998-917e-451a-9bac-64c3bc095263> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amj2f0709998-917e-451a-9bac-64c3bc095263> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
+
+
+###  urn:wholePlantMeasurementDatum/06bc6ad3-0dc8-4cf5-af70-136582ff2d19
+<urn:wholePlantMeasurementDatum/06bc6ad3-0dc8-4cf5-af70-136582ff2d19> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amj206bc6ad3-0dc8-4cf5-af70-136582ff2d19> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
+
+
+###  urn:wholePlantMeasurementDatum/9f1b663f-8ea1-404e-8525-572c323c0596
+<urn:wholePlantMeasurementDatum/9f1b663f-8ea1-404e-8525-572c323c0596> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amh29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amj29f1b663f-8ea1-404e-8525-572c323c0596> ;
+                                                                      <http://purl.obolibrary.org/obo/PPO_0000001> 1 .
 
 
 #################################################################

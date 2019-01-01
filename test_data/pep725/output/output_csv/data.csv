@@ -1,1 +1,6 @@
 record_id,individualID,scientific_name,genus,specific_epithet,year,day_of_year,latitude,longitude,source,sub_source,phenophase_name,basis_of_record,lower_count_wholeplant,upper_count_wholeplant,lower_count_partplant,upper_count_partplant,lower_percent_wholeplant,upper_percent_wholeplant,lower_percent_partplant,upper_percent_partplant
+06bc6ad3-0dc8-4cf5-af70-136582ff2d19,,Galanthus nivalis,Galanthus,nivalis,1868,39,51.5667,3.55,PEP725,,Beginnin of flowering: first flowers open (sporadically),HumanObservation,1,,1,,,,,
+c7a0dbdb-5212-46b1-bdd7-9360143ae455,,Galanthus nivalis,Galanthus,nivalis,1868,41,52.2167,4.63333,PEP725,,Beginnin of flowering: first flowers open (sporadically),HumanObservation,1,,1,,,,,
+d7832172-c554-45c4-b6a4-3a7d111ab3da,,Corylus avellana,Corylus,avellana,1868,42,53.1667,6.86667,PEP725,,Beginnin of flowering: first flowers open (sporadically),HumanObservation,1,,1,,,,,
+9f1b663f-8ea1-404e-8525-572c323c0596,,Corylus avellana,Corylus,avellana,1868,43,52.2167,4.63333,PEP725,,Beginnin of flowering: first flowers open (sporadically),HumanObservation,1,,1,,,,,
+f0709998-917e-451a-9bac-64c3bc095263,,Corylus avellana,Corylus,avellana,1868,44,51.5667,3.55,PEP725,,Beginnin of flowering: first flowers open (sporadically),HumanObservation,1,,1,,,,,

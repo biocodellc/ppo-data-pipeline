@@ -7,7 +7,7 @@
 @base <urn:importInstance> .
 
 <urn:importInstance> rdf:type owl:Ontology ;
-                      owl:imports <https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2017-10-20/ppo.owl> .
+                      owl:imports <https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl> .
 
 #################################################################
 #    Object Properties
@@ -23,6 +23,14 @@
 
 ###  http://purl.obolibrary.org/obo/PPO_0000008
 <http://purl.obolibrary.org/obo/PPO_0000008> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0000014
+<http://purl.obolibrary.org/obo/PPO_0000014> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0000015
+<http://purl.obolibrary.org/obo/PPO_0000015> rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000080
@@ -62,6 +70,11 @@
                                        rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/EventID> .
 
 
+###  http://rs.tdwg.org/dwc/terms/basisOfRecord
+<http://rs.tdwg.org/dwc/terms/basisOfRecord> rdf:type owl:DatatypeProperty ;
+                                             rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/basisOfRecord> .
+
+
 ###  http://rs.tdwg.org/dwc/terms/decimalLatitude
 <http://rs.tdwg.org/dwc/terms/decimalLatitude> rdf:type owl:DatatypeProperty ;
                                                rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/decimalLatitude> .
@@ -72,14 +85,19 @@
                                                 rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/decimalLongitude> .
 
 
+###  http://rs.tdwg.org/dwc/terms/eventRemarks
+<http://rs.tdwg.org/dwc/terms/eventRemarks> rdf:type owl:DatatypeProperty ;
+                                            rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/eventRemarks> .
+
+
 ###  http://rs.tdwg.org/dwc/terms/genus
 <http://rs.tdwg.org/dwc/terms/genus> rdf:type owl:DatatypeProperty ;
                                      rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/genus> .
 
 
-###  http://rs.tdwg.org/dwc/terms/measurementValue
-<http://rs.tdwg.org/dwc/terms/measurementValue> rdf:type owl:DatatypeProperty ;
-                                                rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/measurementValue> .
+###  http://rs.tdwg.org/dwc/terms/individualID
+<http://rs.tdwg.org/dwc/terms/individualID> rdf:type owl:DatatypeProperty ;
+                                            rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/individualID> .
 
 
 ###  http://rs.tdwg.org/dwc/terms/scientificName
@@ -116,6 +134,10 @@ rdf:type rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://purl.obolibrary.org/obo/IAO_0000027
+<http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/IAO_0000109
 <http://purl.obolibrary.org/obo/IAO_0000109> rdf:type owl:Class .
 
@@ -124,8 +146,12 @@ rdf:type rdf:type owl:DatatypeProperty ;
 <http://purl.obolibrary.org/obo/PO_0000003> rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/PPO_0002000
-<http://purl.obolibrary.org/obo/PPO_0002000> rdf:type owl:Class .
+###  http://purl.obolibrary.org/obo/PPO_0000015
+<http://purl.obolibrary.org/obo/PPO_0000015> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/PPO_0007004
+<http://purl.obolibrary.org/obo/PPO_0007004> rdf:type owl:Class .
 
 
 #################################################################
@@ -136,16 +162,16 @@ rdf:type rdf:type owl:DatatypeProperty ;
 <http://n2t.net/ark:/21547/Amd25762420> rdf:type owl:NamedIndividual ,
                                                  <http://purl.obolibrary.org/obo/IAO_0000109> ;
                                         <http://purl.obolibrary.org/obo/OBI_0000312> <http://n2t.net/ark:/21547/Amg25762420> ;
-                                        <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amf25762420> ;
-                                        <http://purl.obolibrary.org/obo/PPO_0000003> "51.0"^^xsd:float ;
-                                        <http://purl.obolibrary.org/obo/PPO_0000004> "100.0"^^xsd:float .
+                                        <http://purl.obolibrary.org/obo/PPO_0000007> <urn:partPlantStructurePresence/5762420> ;
+                                        <http://purl.obolibrary.org/obo/PPO_0000003> 51 ;
+                                        <http://purl.obolibrary.org/obo/PPO_0000004> 100 .
 
 
 ###  http://n2t.net/ark:/21547/Ame25762420
 <http://n2t.net/ark:/21547/Ame25762420> rdf:type owl:NamedIndividual ,
                                                  <http://purl.obolibrary.org/obo/PO_0000003> ;
-                                        <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Amg25762420> ;
                                         <http://purl.obolibrary.org/obo/RO_0000086> <http://n2t.net/ark:/21547/Amf25762420> ;
+                                        <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
                                         <http://rs.tdwg.org/dwc/terms/genus> "Acer"^^xsd:string ;
                                         <http://rs.tdwg.org/dwc/terms/scientificName> "Acer rubrum"^^xsd:string ;
                                         <http://rs.tdwg.org/dwc/terms/specificEpithet> "rubrum"^^xsd:string .
@@ -168,27 +194,70 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                                  <http://purl.obolibrary.org/obo/PPO_0002318> ,
                                                  <http://purl.obolibrary.org/obo/PPO_0002320> ,
                                                  <http://purl.obolibrary.org/obo/PPO_0002322> ;
-                                        <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amd25762420> ;
+                                        <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/5762420> ;
                                         <http://purl.obolibrary.org/obo/RO_0000080> <http://n2t.net/ark:/21547/Ame25762420> .
 
 
 ###  http://n2t.net/ark:/21547/Amg25762420
 <http://n2t.net/ark:/21547/Amg25762420> rdf:type owl:NamedIndividual ,
+                                                 <http://purl.obolibrary.org/obo/BCO_0000003> ,
                                                  <http://purl.obolibrary.org/obo/BFO_0000003> ,
                                                  <http://purl.obolibrary.org/obo/BFO_0000015> ,
                                                  <http://purl.obolibrary.org/obo/OBI_0000011> ,
-                                                 <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                 <http://purl.obolibrary.org/obo/PPO_0007004> ,
                                                  <http://rs.tdwg.org/dwc/terms/Event> ;
-                                        <http://purl.obolibrary.org/obo/OBI_0000293> <http://n2t.net/ark:/21547/Ame25762420> ;
+                                        <http://purl.obolibrary.org/obo/OBI_0000293> <urn:partPlant/5762420> ;
                                         <http://purl.obolibrary.org/obo/OBI_0000299> <http://n2t.net/ark:/21547/Amd25762420> ;
                                         <http://rs.tdwg.org/dwc/terms/EventID> 5762420 ;
                                         <http://rs.tdwg.org/dwc/terms/decimalLatitude> "41.8201"^^xsd:float ;
                                         <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-69.9658"^^xsd:float ;
-                                        <http://rs.tdwg.org/dwc/terms/measurementValue> "15.1"^^xsd:float ;
+                                        <http://rs.tdwg.org/dwc/terms/eventRemarks> "Increasing leaf size"^^xsd:string ;
                                         <http://rs.tdwg.org/dwc/terms/startDayOfYear> 149 ;
                                         <http://rs.tdwg.org/dwc/terms/year> 2015 ;
                                         <urn:subSource> "Nature's Notebook"^^xsd:string ;
-                                        <http://purl.org/dc/elements/1.1/creator> "NPN"^^xsd:string .
+                                        <http://purl.org/dc/elements/1.1/creator> "USA-NPN"^^xsd:string .
+
+
+###  urn:partPlant/5762420
+<urn:partPlant/5762420> rdf:type owl:NamedIndividual ,
+                                 <http://purl.obolibrary.org/obo/PPO_0000015> ;
+                        <http://purl.obolibrary.org/obo/OBI_0000295> <http://n2t.net/ark:/21547/Amg25762420> ;
+                        <http://purl.obolibrary.org/obo/PPO_0000015> <http://n2t.net/ark:/21547/Ame25762420> ;
+                        <http://purl.obolibrary.org/obo/RO_0000086> <urn:partPlantStructurePresence/5762420> ;
+                        <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^xsd:string ;
+                        <http://rs.tdwg.org/dwc/terms/genus> "Acer"^^xsd:string ;
+                        <http://rs.tdwg.org/dwc/terms/scientificName> "Acer rubrum"^^xsd:string ;
+                        <http://rs.tdwg.org/dwc/terms/specificEpithet> "rubrum"^^xsd:string .
+
+
+###  urn:partPlantStructurePresence/5762420
+<urn:partPlantStructurePresence/5762420> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002000> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002014> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002015> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002017> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002018> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002020> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002022> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002024> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002312> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002313> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002315> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002316> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002318> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002320> ,
+                                                  <http://purl.obolibrary.org/obo/PPO_0002322> ;
+                                         <http://purl.obolibrary.org/obo/PPO_0000008> <http://n2t.net/ark:/21547/Amd25762420> ;
+                                         <http://purl.obolibrary.org/obo/RO_0000080> <urn:partPlant/5762420> .
+
+
+###  urn:wholePlantMeasurementDatum/5762420
+<urn:wholePlantMeasurementDatum/5762420> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                         <http://purl.obolibrary.org/obo/PPO_0000007> <http://n2t.net/ark:/21547/Amf25762420> ;
+                                         <http://purl.obolibrary.org/obo/PPO_0000014> <http://n2t.net/ark:/21547/Amd25762420> ;
+                                         <http://purl.obolibrary.org/obo/PPO_0000003> 51 ;
+                                         <http://purl.obolibrary.org/obo/PPO_0000004> 100 .
 
 
 #################################################################
