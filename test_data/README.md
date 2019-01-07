@@ -14,5 +14,6 @@ The tests are invoked automatically by the test package
 
 The examples in this directory can also be run outside of this test environment by using:
 ```
-{root}/run_test_npn.sh
-{root}/run_test_pep725.sh
+{root}/run_test.sh npn
+{root}/run_test.sh pep725
+```
