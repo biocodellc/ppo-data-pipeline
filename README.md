@@ -21,4 +21,4 @@ If all of the tests pass, update incoming data files in ```data/{project-name}/i
 
 Some information about the ppo-data-pipeline is mentioned in:
 
-Brian J. Stucky, Rob Guralnick, John Deck, Ellen G. Denny, Kjell Bolmgren, and Ramona Walls. [*The Plant Phenology Ontology: A New Informatics Resource for Large-Scale Integration of Plant Phenology Data*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5938398/), Front Plant Sci. 2018; 9: 517, doi: 10.3389/fpls.2018.00517
+[Brian J. Stucky, Rob Guralnick, John Deck, Ellen G. Denny, Kjell Bolmgren, and Ramona Walls. *The Plant Phenology Ontology: A New Informatics Resource for Large-Scale Integration of Plant Phenology Data*, Front Plant Sci. 2018; 9: 517, doi: 10.3389/fpls.2018.00517](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5938398/)
