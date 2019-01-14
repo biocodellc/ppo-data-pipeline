@@ -1,8 +1,8 @@
 # ppo-data-pipeline
 
-This repository contains configuration files and scripts to process plant phenological data using the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline).  Note that in January of 2019, we refactored the ppo-data-pipeline codebase to store just the configuration files and test framework to run plant phenological data through the ontology-data-pipeline application, which contains just the code logic to process this data.
+NOTE: in January of 2019, we refactored the ppo-data-pipeline codebase to store just the configuration files and test framework for processing plant phenologcial data (contained in this repo), and created the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) repository to store all code and logic.  Users wishing to implement the ontology data pipeline for their own purposes should visit the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) repository. 
 
-To get started, first follow the installation instructions at [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline). Once you have installed the ontology-data-pipeline, you should be able to fork this repository and run the tests to ensure that the environment is working properly:
+This repository contains configuration files and scripts to process plant phenological data using the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline).  To get started, first follow the installation instructions at [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline). Once you have installed the ontology-data-pipeline, you should be able to fork this repository and run the tests to ensure that the environment is working properly:
 
 ```pytest``` 
 
