@@ -7,7 +7,7 @@ To get started, choose one of two paths, outlined below and follw the instructio
 # Docker Method
 [Install docker](https://docs.docker.com/install/) and then clone this repository.  Once that is done, you can enter the following:
 ```
-./run_test_docker.sh vertnet
+./run_test_docker.sh npn
 ```
 
 The above runs a small test project through the pipeline... you should see output that looks like:
