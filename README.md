@@ -29,7 +29,7 @@ DEBUG:root:running query_fetcher with:
 DEBUG:root:java -jar /app/process/../lib/query_fetcher-0.0.1.jar -i /process/test_data/npn/output/output_reasoned/data_1.ttl -inputFormat TURTLE -o /process/test_data/npn/output/output_reasoned_csv -numThreads 1 -sparql /process/config/fetch_reasoned.sparql
 INFO:root:b'    writing /process/test_data/npn/output/output_reasoned_csv/data_1.ttl.csv\n'
 INFO:root:reasoned_csv output at test_data/npn/output/output_reasoned_csv/data_1.ttl.csv
-...
+```
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
