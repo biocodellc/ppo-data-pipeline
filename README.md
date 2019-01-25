@@ -33,6 +33,12 @@ INFO:root:reasoned_csv output at test_data/npn/output/output_reasoned_csv/data_1
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
+If all of the tests pass, update incoming data files in ```data/{project-name}/input/``` and  run the data processor for each project.  A ```run_docker.sh``` script is provided to run each project:
+
+```
+./run_docker.sh npn
+```
+
 # Non-docker Method
 First follow the installation instructions at [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline). Once you have installed the ontology-data-pipeline, you should be able to fork this repository, which contains the configuration files to run the ontology data pipeline for plant phenological data, and run the tests to ensure that the environment is working properly:
 
