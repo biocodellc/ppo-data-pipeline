@@ -12,6 +12,6 @@ python ../ontology-data-pipeline/process.py \
     $PROJECT \
     data/$PROJECT/input/ \
     data/$PROJECT/output/ \
-    file:/Users/jdeck/IdeaProjects/ppo-data-pipeline/config/ppo-merged-reasoned.owl \
+    https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl \
     config/ \
     projects/ \
