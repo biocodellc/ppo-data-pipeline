@@ -9,6 +9,9 @@ if [ -z $PROJECT ]
      exit 0
 fi
 
+# check that we have the latest ...
+docker pull jdeck88/ontology-data-pipeline
+
 docker run -v "$(pwd)":/process -w=/app -ti jdeck88/ontology-data-pipeline \
     python pipeline.py \
     -v --drop_invalid \
