@@ -1,11 +1,9 @@
 # ppo-data-pipeline
 
-**NOTE:** in January of 2019, we refactored the ppo-data-pipeline codebase to store just the configuration files and test framework for processing plant phenologcial data (contained in this repo), and created the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) repository to store all code and logic.  Users wishing to implement the ontology data pipeline for their own purposes should visit the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) repository. 
-
-To get started, choose one of two paths, outlined below and follw the instructions.  
+This repository stores configuration information for the Plant Phenology Ontology to run using code and logic from the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline).   To get started, choose one of two paths, outlined below and follw the instructions.  
 
 # Docker Method
-[Install docker](https://docs.docker.com/install/) and then clone this repository.  Once that is done, you can enter the following:
+[Install docker](https://docs.docker.com/install/) and then clone this repository.  Please refer to the Docker documentation itself if you have troubles getting your docker instance to run.  Once docker is running, you can enter the following:
 ```
 ./run_test_docker.sh npn
 ```
