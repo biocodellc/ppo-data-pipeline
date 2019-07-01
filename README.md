@@ -31,8 +31,7 @@ INFO:root:reasoned_csv output at test_data/npn/output/output_reasoned_csv/data_1
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
-If all of the tests pass, update incoming data files in ```data/{project-name}/input/``` and  run the data processor for each project.  A ```run_docker.sh``` script is provided to run each project:
-
+If all of the tests pass, update incoming data files in ```data/{project-name}/input/``` and  run the data processor for each project.  A ```run.sh``` script is provided to run each project:
 
 ```
 # process NPN data
@@ -43,6 +42,19 @@ If all of the tests pass, update incoming data files in ```data/{project-name}/i
 ./run.sh neon
 # process herbarium data
 ./run.sh herbarium
+```
+
+# Updating data
+Some of the projects contain scripts which help you fetch data from source API's.  You will need to run these scripts using python:
+
+```
+# updating neon
+cd projects/neon
+python data_fetcher.py  ../../data/neon/input
+
+# updating npn
+cd projects/npn
+python data_fetcher.py  ../../data/npn/input
 ```
 
 Some information about the ppo-data-pipeline is mentioned in:
