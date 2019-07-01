@@ -8,6 +8,7 @@ import logging
 import multiprocessing
 import pandas as pd
 import numpy as np
+import sys
 
 from preprocessor import AbstractPreProcessor
 
@@ -42,18 +43,22 @@ class PreProcessor(AbstractPreProcessor):
 
                 if '.phe_statusintensity.' in filename:
                     if statusintensity_file:
-                        raise RuntimeError(
-                            'multiple phe_statusintensity csv files found in zip_file {}'.format(zip_file.filename))
+                        logging.debug('multiple phe_statusintensity csv files found in zip_file {}'.format(zip_file.filename))
+                        logging.debug('continuing...')
+                        return
                     statusintensity_file = zip_file.open(filename)
 
                 elif '.phe_perindividual.' in filename:
                     if per_individual_file:
-                        raise RuntimeError(
-                            'multiple phe_perindividual csv files found in zip_file {}'.format(zip_file.filename))
+                        logging.debug('multiple phe_perindividual csv files found in zip_file {}'.format(zip_file.filename))
+                        logging.debug('continuing...')
+                        return
                     per_individual_file = zip_file.open(filename)
 
         if not statusintensity_file or not per_individual_file:
-            raise RuntimeError('could not find needed files in zip_file {}'.format(zip_file.filename))
+            logging.debug('could not find needed files in zip_file {}'.format(zip_file.filename))
+            logging.debug('continuing...')
+            return
 
         individuals = pd.read_csv(per_individual_file, header=0, skipinitialspace=True,
                                   usecols=['decimalLatitude', 'decimalLongitude', 'namedLocation', 'individualID',
@@ -65,7 +70,7 @@ class PreProcessor(AbstractPreProcessor):
 
         data = pd.read_csv(statusintensity_file, header=0, skipinitialspace=True,
                            usecols=['uid', 'date', 'dayOfYear', 'individualID', 'phenophaseName', 'phenophaseStatus',
-                                    'phenophaseIntensity', 'namedLocation'], parse_dates=['date'])
+                                    'phenophaseIntensity', 'namedLocation'], parse_dates=['date'], dtype={'phenophaseIntensity':str})
 
         data = data.merge(individuals, left_on=['individualID', 'namedLocation'],
                           right_on=['individualID', 'namedLocation'], how='left')
