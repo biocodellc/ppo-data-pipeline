@@ -1,5 +1,6 @@
 data/*
 **/*.pyc
 **/.cache/*
+output/
 **/__pycache__/*
 .python-version
