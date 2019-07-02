@@ -1,0 +1,5 @@
+field,defined_by,lower,upper
+flowers present,{flower presence},,1
+flowers absent,{flower presence},,0
+open flowers present,{open flower presence},,1
+open flowers absent,{open flower presence},,0
