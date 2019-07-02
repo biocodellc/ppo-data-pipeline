@@ -1,7 +1,7 @@
 PROJECT=$1
 if [ -z $PROJECT ]
    then
-     echo "Usage: run_docker.sh {project}"
+     echo "Usage: run.sh {project}"
      echo "Current projects are neon, pep725, npn, herbarium."
      echo "This bash script runs the pipeline for each of these projects using data in test_data directory" 
      echo "NOTE that this does not actually run the TEST script itself, but is used to run through the pipeline"
