@@ -12,7 +12,7 @@ import numpy as np
 from preprocessor import AbstractPreProcessor
 
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
-FILE_PREFIX = "imageScoring_"
+FILE_PREFIX = "image_scoring_"
 DATA_FILE = os.path.join(FILE_PREFIX+'_data.csv')
 
 class PreProcessor(AbstractPreProcessor):
@@ -20,7 +20,7 @@ class PreProcessor(AbstractPreProcessor):
     def _process_data(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
 
-        data = pd.read_csv(os.path.join(self.input_dir, "imageScoring.csv"), header=0, engine='python' )
+        data = pd.read_csv(os.path.join(self.input_dir, "image_scoring.csv"), header=0, engine='python' )
 
         self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
 
