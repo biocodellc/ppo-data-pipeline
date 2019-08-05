@@ -107,7 +107,7 @@ class PreProcessor(AbstractPreProcessor):
             return row
 
         try:
-            if row.phenophase_status == 0:
+            if int(row.phenophase_status) == 0:
                 row['lower_percent_partplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_absent'].values[0]
                 row['upper_percent_partplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_absent'].values[0]
                 row['lower_percent_wholeplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_absent'].values[0]
