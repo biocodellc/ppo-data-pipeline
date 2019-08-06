@@ -34,12 +34,15 @@ class PreProcessor(AbstractPreProcessor):
             chunksize = chunk_size)
 
         for chunk in data:
-            self._transform_data(chunk).to_csv(
-                self.output_file, 
-                columns=self.headers, 
-                mode='a', 
-                header=False, 
-                index=False)
+
+            chunks = [chunk.ix[chunk.index[i:i + chunk_size]] for i in
+                range(0, chunk.shape[0], chunk_size)]
+
+            with multiprocessing.Pool(processes=num_processes) as pool:
+                pool.map(self._transform_chunk, chunks) 
+
+    def _transform_chunk(self, chunk):
+    	self._transform_data(chunk).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
 
     def _transform_data(self, data):
         # Add an index name
