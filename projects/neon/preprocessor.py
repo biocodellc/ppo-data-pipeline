@@ -95,11 +95,10 @@ class PreProcessor(AbstractPreProcessor):
             row['dayOfYear'], axis=1)
 
         data['sub_source'] = ''
-        data['upper_percent_partplant'] = ''
-        data['upper_percent_wholeplant'] = ''
-        data['lower_percent_partplant'] = ''
-        data['lower_percent_wholeplant'] = ''
 
+        with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+            print(data)
+        # Populate dataframe with lower and upper count values based on intensity description
         df = data.merge(INTENSITY_VALUE_FRAME, left_on='phenophaseIntensity', right_on='value', how='left')
 
         # check that we have a 'value' value if we have a phenophaseIntensity value
@@ -122,6 +121,8 @@ class PreProcessor(AbstractPreProcessor):
 
         df = df.rename(columns=COLUMNS_MAP)
 
+        with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+            print(df)
         return df
 
 
@@ -148,7 +149,7 @@ def generate_phen_descriptions(input_dir):
                     csv_file = zip_file.open(filename)
 
         if not csv_file:
-            raise RuntimeError('didnt file csv file in zip_file {}'.format(zip_file.filename))
+            raise RuntimeError('didnt find csv file in zip_file {}'.format(zip_file.filename))
 
         data = pd.read_csv(csv_file, header=0, chunksize=1000000, skipinitialspace=True,
                            usecols=['phenophaseName'])
