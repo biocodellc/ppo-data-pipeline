@@ -16,19 +16,20 @@ def test_end_to_end(project):
     # set the project, always preceeded with test_
     project_name = project
     # set the project base dir
-    project_base_dir = os.path.join('projects') 
+    project_base_dir = os.path.join('/','process','projects') 
     # set the project base, based on project name
     project_base = '.projects.'+project_name #python name reference for dynamic class loading
     # set the project output path
     project_path = os.path.join(project_base_dir)
     # output directory
     output_path = os.path.join('test_data',project_name,'output')
+    process_output_path = os.path.join('/','process',output_path)
     # input directory
-    input_path = os.path.join('test_data',project_name,'input')
+    input_path = os.path.join('/','process','test_data',project_name,'input')
     # path pointing to onfiguration files. we do not use the main project configuration directory 
     # for the application itself as that may contain changes we don't wish to test.
     # to test changes in configuration files the relevant config files should be copied here
-    config_path = os.path.join('config')
+    config_path = os.path.join('/','process','config')
     # reference to ontology. Do NOT change this as it will interfere with rest results. it is Okay if ontology is
     # out of date.  Here we reference a specific release of the ontology itself so it should be static
     ontology_url = 'https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl'
@@ -39,17 +40,37 @@ def test_end_to_end(project):
     expected_results_file_name = os.path.join('test_data',project+'_results.csv')
     # name of file to store output text, if test fails we can learn more information in this file
     output_file = 'output.txt'
+    docker_process = os.path.join(os.getcwd(),':/process')
 
     # The ontology is hard-coded here so tests can pass even if ontology is changed.
     # The presence here of an up to data ontology is not necessary since we're just 
     # performing tests on pipeline functionality
-    cmd = ['python', '../ontology-data-pipeline/process.py', project_name, input_path, output_path, ontology_url, config_path,project_path]
+    #cmd = ['python', '../ontology-data-pipeline/process.py', project_name, input_path, output_path, ontology_url, config_path,project_path]
+
+    # check that we have latest docker image
+    print("")
+    print("commands that were run:")
+
+    cmd = ['docker', 'pull', 'jdeck88/ontology-data-pipeline']
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print(subprocess.list2cmdline(cmd))
+
+    # run the test command in docker environment
+    cmd = [
+        'docker', 'run', '-v', docker_process, '-w=/app', '-i', 'jdeck88/ontology-data-pipeline', 
+        'python', 
+            'pipeline.py', 
+            '-v', 
+            '--drop_invalid', 
+            '--project', project_name, 
+            '--project_base', project_base_dir, 
+            '--input_dir', input_path,
+            process_output_path, ontology_url, config_path
+            ]
 
     # setup process to execute given command
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-    print("")
-    print("the commandline is")
     print(subprocess.list2cmdline(cmd))
 
 
