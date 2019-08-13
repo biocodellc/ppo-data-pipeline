@@ -49,20 +49,21 @@ class PreProcessor(AbstractPreProcessor):
         # data.index.name = 'record_id'
 
         # drop all records where the user is unsure of what was coded (this is phenophase_status = -1)
-        data = data[data.phenophase_status != -1]
+        data = data[data.phenophase_status != '-1']
 
-        # Handle cases where we want to force a default intensity value 
-        # First, fill out the force_default_value column with False where there is no value
+        # Handle cases where we want to force a default intensity value.  These are annotated in the
+        # phenophase_descrptions file and indicated by force_default = true
         self.descriptions['force_default_value'] = self.descriptions['force_default_value'].fillna(False)
-        # Second, apply, row by row a filter that sets the intensity_value to -9999 when we want to force defaults
+        # Apply, row by row a filter that sets the intensity_value to -9999 when we want to force defaults
         data = data.apply(lambda row: self._force_defaults(row), axis=1)
 
-        # map counts from intensity_value table to upper and lower count/percents
-        cols = ['value', 'lower_count', 'upper_count', 'lower_percent', 'upper_percent']
-        data = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', data,
-                             'intensity_value')
+        # When intensity_value field is filled out, translate the definitions to actual counts using the intensity_values table
+        cols = ['value', 'lower_count_partplant', 'upper_count_partplant', 'lower_percent_partplant', 'upper_percent_partplant', 'lower_count_wholeplant', 'upper_count_wholeplant', 'lower_percent_wholeplant', 'upper_percent_wholeplant']
+        data = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', data, 'intensity_value')
 
-        # when intensity_value != -9999 set upper/lower counts 
+        # when intensity_value field is not filled out (value of -9999) set upper/lower counts from descriptions table
+        # Counts are set conditionally based on presence or absence of trait marked by phenophase_status
+        # this part is SLOW...................
         data = data.apply(lambda row: self._set_defaults(row), axis=1)
 
         # set the source
@@ -81,10 +82,6 @@ class PreProcessor(AbstractPreProcessor):
 
         # filling in remaining column names, even though there is no data
         data['individualID'] = ''
-        data['lower_count_wholeplant'] = ''
-        data['upper_count_wholeplant'] = ''
-        data['lower_count_partplant'] = ''
-        data['upper_count_partplant'] = ''
 
         data = data.rename(columns=COLUMNS_MAP)
 
