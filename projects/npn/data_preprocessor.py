@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# Code to pre-process NPN data and reading for processing
+import argparse
 import os, csv, shutil
 import multiprocessing 
 import pandas as pd
@@ -8,12 +10,12 @@ PROJECT = 'npn'
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
 OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'output')
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 CONFIG = os.path.join(ROOT_PATH, 'config')
 
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
 DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_dataset_data.csv')
 INPUT_FILE = os.path.join(INPUT_DIR, 'npn_observations_data.csv')
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 
 COLUMNS_MAP = {
         'observation_id': 'record_id',
@@ -33,10 +35,16 @@ class PreProcessor():
                 usecols=['Dataset_ID', 'Source'], dtype='object')
 
         self.num_processes = multiprocessing.cpu_count()
-        self.chunk_size = 500
+        # default chunk_size
+        self.chunk_size = 50000
         self.headers = ''
     
     def main(self):
+        parser = argparse.ArgumentParser(description='NPN Data Pre-Processor')
+        parser.add_argument('chunk_size', help='the chunk size to use', type=int)
+
+        args = parser.parse_args()
+        self.chunk_size = args.chunk_size
         self.run()
 
     def run(self):
