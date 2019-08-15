@@ -7,7 +7,7 @@ PROJECT = 'npn'
 
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
-OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT)
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'output')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 CONFIG = os.path.join(ROOT_PATH, 'config')
 
