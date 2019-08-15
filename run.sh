@@ -1,6 +1,6 @@
 PROJECT=$1
 
-if [[ -z $PROJECT]] 
+if [ -z $PROJECT ]
    then
      echo "Usage: run.sh {PROJECT}"
      echo ""
