@@ -7,12 +7,13 @@ PROJECT = 'npn'
 
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
-OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT)
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'output')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 CONFIG = os.path.join(ROOT_PATH, 'config')
 
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
 DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_dataset_data.csv')
+INPUT_FILE = os.path.join(INPUT_DIR, 'npn_observations_data.csv')
 
 COLUMNS_MAP = {
         'observation_id': 'record_id',
@@ -40,7 +41,7 @@ class PreProcessor():
 
     def run(self):
         data = pd.read_csv(
-                os.path.join(INPUT_DIR, "npn_observations_data.csv"), 
+                INPUT_FILE,
                 header=0, 
                 engine='python', 
                 dtype='object', 
