@@ -33,7 +33,7 @@ class PreProcessor():
                 usecols=['Dataset_ID', 'Source'], dtype='object')
 
         self.num_processes = multiprocessing.cpu_count()
-        self.chunk_size = 100000
+        self.chunk_size = 500
         self.headers = ''
     
     def main(self):
