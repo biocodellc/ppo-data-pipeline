@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os, csv, shutil
-import multiprocessing
+import multiprocessing 
 import pandas as pd
 
 PROJECT = 'npn'
@@ -17,7 +17,7 @@ DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_datas
 COLUMNS_MAP = {
         'observation_id': 'record_id',
         'species': 'specific_epithet',
-        'phenophase_description': 'phenophase_name',
+        'defined_by': 'measurementType',
         'Source': 'sub_source'
         }
 
@@ -26,12 +26,14 @@ class PreProcessor():
 
     def __init__(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
+        self.traits = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object', usecols=['field','defined_by'])
 
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
                 usecols=['Dataset_ID', 'Source'], dtype='object')
 
         self.num_processes = multiprocessing.cpu_count()
         self.chunk_size = 500
+        self.headers = ''
     
     def main(self):
         self.run()
@@ -46,25 +48,41 @@ class PreProcessor():
 
 		# clean
         self._clean()
-
+        jobs = []
+        count = 0
         for chunk in data:
 
             chunks = [chunk.ix[chunk.index[i:i + self.chunk_size]] for i in
                 range(0, chunk.shape[0], self.chunk_size)]
 
-            jobs = []
+            writeHeader = False
+            if (count == 0):
+                writeHeader = True
 
-            p = multiprocessing.Process(target=self._transform_chunk, args=(chunks))
+            p = multiprocessing.Process(target=self._transform_chunk, args=(chunks,writeHeader))
             jobs.append(p)
             p.start()
+
+            # wait for first job to complete, so header can write
+            if (count == 0):
+                p.join()
+
+            count = count + 1
+
+
+        for p in jobs:
+            p.join()
+
+        
+        #print ("finished, writing headers to top of file")
+        #headerFrame = pd.DataFrame(self.headers)
+        #headerFrame.to_csv(OUTPUT_FILE, index=False)
+
          
-    def _transform_chunk(self, chunk):
-        writeHeaders = True
-        if os.path.isfile(OUTPUT_FILE):
-            writeHeaders = False
-#
-        print("\tprocessing next {} records".format(len(chunk)))
-        self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=self._parse_headers(), mode='a', header=writeHeaders, index=False)
+    def _transform_chunk(self, listchunk, writeHeader):
+       chunk = listchunk[0]
+       print("\tprocessing next {} records".format(len(chunk)))
+       self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=self._parse_headers(), mode='a', header=writeHeader, index=False)
 
     def _transform_data(self, data):
         # Add an index name
@@ -95,6 +113,8 @@ class PreProcessor():
         data['source'] = 'USA-NPN'
         data['basis_of_record'] = 'HumanObservation'
         data = data.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')
+        data = data.merge(self.traits, left_on='phenophase_description', right_on='field', how='left')
+        del data['field']
 
         # Normalize Date to just Year. we don't need to store actual date because we use only Year + DayOfYear
         data['year'] = pd.DatetimeIndex(data['observation_date']).year
