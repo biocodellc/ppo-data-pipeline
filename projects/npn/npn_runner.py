@@ -24,42 +24,45 @@ COLUMNS_MAP = {
 
 class PreProcessor():
 
-    def main(self):
-
+    def __init__(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
 
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
                 usecols=['Dataset_ID', 'Source'], dtype='object')
 
-        num_processes = multiprocessing.cpu_count()
-        print (num_processes)
-        chunk_size = 1000
+        self.num_processes = multiprocessing.cpu_count()
+        self.chunk_size = 500
+    
+    def main(self):
+        self.run()
 
+    def run(self):
         data = pd.read_csv(
                 os.path.join(INPUT_DIR, "npn_observations_data.csv"), 
                 header=0, 
                 engine='python', 
                 dtype='object', 
-                chunksize = chunk_size)
+                chunksize = self.chunk_size)
 
 		# clean
         self._clean()
 
         for chunk in data:
 
-            chunks = [chunk.ix[chunk.index[i:i + chunk_size]] for i in
-                range(0, chunk.shape[0], chunk_size)]
+            chunks = [chunk.ix[chunk.index[i:i + self.chunk_size]] for i in
+                range(0, chunk.shape[0], self.chunk_size)]
 
-            with multiprocessing.Pool(processes=num_processes) as pool:
-                print("pooling....")
-                pool.map(self._transform_chunk, chunks) 
-                print("finished pooling....")
+            jobs = []
+
+            p = multiprocessing.Process(target=self._transform_chunk, args=(chunks))
+            jobs.append(p)
+            p.start()
          
     def _transform_chunk(self, chunk):
         writeHeaders = True
         if os.path.isfile(OUTPUT_FILE):
             writeHeaders = False
-
+#
         print("\tprocessing next {} records".format(len(chunk)))
         self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=self._parse_headers(), mode='a', header=writeHeaders, index=False)
 
@@ -68,21 +71,25 @@ class PreProcessor():
         # data.index.name = 'record_id'
 
         # drop all records where the user is unsure of what was coded (this is phenophase_status = -1)
-        data = data[data.phenophase_status != -1]
+        data = data[data.phenophase_status != '-1']
 
-        # Handle cases where we want to force a default intensity value 
-        # First, fill out the force_default_value column with False where there is no value
+        # Handle cases where we want to force a default intensity value.  These are annotated in the 
+        # phenophase_descrptions file and indicated by force_default = true
         self.descriptions['force_default_value'] = self.descriptions['force_default_value'].fillna(False)
-        # Second, apply, row by row a filter that sets the intensity_value to -9999 when we want to force defaults
+        # Apply, row by row a filter that sets the intensity_value to -9999 when we want to force defaults
         data = data.apply(lambda row: self._force_defaults(row), axis=1)
 
-        # map counts from intensity_value table to upper and lower count/percents
-        cols = ['value', 'lower_count', 'upper_count', 'lower_percent', 'upper_percent']
-        data = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', data,
-                'intensity_value')
 
-        # when intensity_value != -9999 set upper/lower counts 
+        # When intensity_value field is filled out, translate the definitions to actual counts using the intensity_values table
+        cols = ['value', 'lower_count_partplant', 'upper_count_partplant', 'lower_percent_partplant', 'upper_percent_partplant', 'lower_count_wholeplant', 'upper_count_wholeplant', 'lower_percent_wholeplant', 'upper_percent_wholeplant']
+        data = self._translate(os.path.join(os.path.dirname(__file__), 'intensity_values.csv'), cols, 'value', data, 'intensity_value')
+
+       
+        # when intensity_value field is not filled out (value of -9999) set upper/lower counts from descriptions table
+        # Counts are set conditionally based on presence or absence of trait marked by phenophase_status
+        # this part is SLOW...................
         data = data.apply(lambda row: self._set_defaults(row), axis=1)
+
 
         # set the source
         data['source'] = 'USA-NPN'
@@ -100,12 +107,9 @@ class PreProcessor():
 
         # filling in remaining column names, even though there is no data
         data['individualID'] = ''
-        data['lower_count_wholeplant'] = ''
-        data['upper_count_wholeplant'] = ''
-        data['lower_count_partplant'] = ''
-        data['upper_count_partplant'] = ''
 
         data = data.rename(columns=COLUMNS_MAP)
+
 
         return data
 
@@ -113,7 +117,6 @@ class PreProcessor():
     # with -9999.  Force defaults overrides intensity_value descriptions with default values for phenophases where
     # user count data do not make sense for PPO purposes.
     def _force_defaults(self, row):
-        #print (self.descriptions['field']['defined_by']).values[0]
         try:
             if self.descriptions[(self.descriptions['field'] == row['phenophase_description'])]['force_default_value'].values[0]:
                 row['intensity_value'] = '-9999'
@@ -127,7 +130,6 @@ class PreProcessor():
     def _set_defaults(self, row):
         if row.intensity_value != '-9999':
             return row
-
         try:
             if int(row.phenophase_status) == 0:
                 row['lower_percent_partplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_absent'].values[0])
