@@ -7,7 +7,7 @@ PROJECT = 'npn'
 
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
-OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'output')
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT)
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 CONFIG = os.path.join(ROOT_PATH, 'config')
 
@@ -17,7 +17,7 @@ DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_datas
 COLUMNS_MAP = {
         'observation_id': 'record_id',
         'species': 'specific_epithet',
-        'defined_by': 'measurementType',
+        'defined_by': 'phenophase_name',
         'Source': 'sub_source'
         }
 
@@ -32,7 +32,7 @@ class PreProcessor():
                 usecols=['Dataset_ID', 'Source'], dtype='object')
 
         self.num_processes = multiprocessing.cpu_count()
-        self.chunk_size = 500
+        self.chunk_size = 100000
         self.headers = ''
     
     def main(self):
