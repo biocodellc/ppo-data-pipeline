@@ -2,7 +2,7 @@
 
 This repository stores configuration information for running the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) for Plant Phenology Data and alignment with the [Plant Phenology Ontology](https://github.com/PlantPhenoOntology/ppo).  To get started, choose either the "Docker Method" or "Non-Docker Method" below: 
 
-# Docker Method
+# Installation/Setup
 [Install docker](https://docs.docker.com/install/) and then clone this repository.  Please refer to the Docker documentation itself if you have troubles getting your docker instance to run.  Once docker is running, you can enter the following:
 ```
 ./run_test_docker.sh npn
@@ -31,11 +31,20 @@ INFO:root:reasoned_csv output at test_data/npn/output/output_reasoned_csv/data_1
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
-If all of the tests pass, update incoming data files in ```data/{project-name}/input/``` and  run the data processor for each project.  A ```run.sh``` script is provided to run each project:
+If all of the tests pass, you can started processing each project
 
 ```
 # process NPN data
-./run.sh npn 
+cd projects/npn
+# fetch NPN data and store in data/npn/input/
+python data_fetcher.py
+# pre-process NPN data, specifying the chunk-size to use in pre-processor (suggest 50,000)
+# stores output data/npn/output/data.csv
+python data_preprocessor.py 50000
+# run the pipeline
+cd ../..
+./run.sh data/npn/output/data.csv data/npn/output
+
 # process PEP725 data
 ./run.sh pep725 
 # process neon data
