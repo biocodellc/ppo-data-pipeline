@@ -3,26 +3,36 @@
 """proprocessor.AbstractPreProcessor implementation for preprocessing pep725 data"""
 
 import re, uuid
-import os
+import os,csv
 #import multiprocessing
 import pandas as pd
 import math
 import sys
 import numpy as np
-from preprocessor import AbstractPreProcessor
 
+PROJECT = 'image_scoring'
+ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
+INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
+CONFIG = os.path.join(ROOT_PATH, 'config')
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
 FILE_PREFIX = "image_scoring_"
 DATA_FILE = os.path.join(FILE_PREFIX+'_data.csv')
 
-class PreProcessor(AbstractPreProcessor):
+class PreProcessor():
+
+    def main(self):
+        print("starting....")
+        self._process_data()
 
     def _process_data(self):
         self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
 
-        data = pd.read_csv(os.path.join(self.input_dir, "image_scoring.csv"), header=0, engine='python' )
+        data = pd.read_csv(os.path.join(INPUT_DIR, "image_scoring.csv"), header=0, engine='python' )
 
-        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
+        print ("transforming data....")
+        self._transform_data(data).to_csv(OUTPUT_FILE, columns=_parse_headers(self), mode='w', header=True, index=False)
 
     def _transform_data(self, data):
 
@@ -92,3 +102,17 @@ class PreProcessor(AbstractPreProcessor):
             pass
 
         return row
+# read the mapping.csv file and convert to a list to use as column headers
+# This replaces the need for a separate headers.csv file
+def _parse_headers(self):
+    file = os.path.join(CONFIG, 'mapping.csv')
+    if os.path.exists(file):
+       with open(file) as f:
+           reader = csv.reader(f, skipinitialspace=True)
+           self.headers = next(reader)
+       df = pd.read_csv(file)
+       self.headers = df['column'].unique().tolist()
+
+if __name__ == '__main__':
+    PreProcessor().main()
+
