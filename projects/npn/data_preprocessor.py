@@ -4,26 +4,23 @@ import argparse
 import os, csv, shutil
 import multiprocessing 
 import pandas as pd
+sys.path.append('../')
+import config
 
 PROJECT = 'npn'
-
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
 OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
-CONFIG = os.path.join(ROOT_PATH, 'config')
-
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
 DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_dataset_data.csv')
 INPUT_FILE = os.path.join(INPUT_DIR, 'npn_observations_data.csv')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
-
 COLUMNS_MAP = {
         'observation_id': 'record_id',
         'species': 'specific_epithet',
         'defined_by': 'phenophase_name',
         'Source': 'sub_source'
         }
-
 
 class PreProcessor():
 
@@ -91,7 +88,7 @@ class PreProcessor():
     def _transform_chunk(self, listchunk, writeHeader):
        chunk = listchunk[0]
        print("\tprocessing next {} records".format(len(chunk)))
-       self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=self._parse_headers(), mode='a', header=writeHeader, index=False)
+       self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=config._parse_headers(), mode='a', header=writeHeader, index=False)
 
     def _transform_data(self, data):
         # Add an index name
@@ -195,17 +192,6 @@ class PreProcessor():
                     # assign the new column name values based on lookup column name
                     data_frame[column] = data_frame[lookup_column].map(this_dict)
         return data_frame
-
-    # read the mapping.csv file and convert to a list to use as column headers
-    # This replaces the need for a separate headers.csv file
-    def _parse_headers(self):
-        file = os.path.join(CONFIG, 'mapping.csv')
-        if os.path.exists(file):
-            with open(file) as f:
-                reader = csv.reader(f, skipinitialspace=True)
-                self.headers = next(reader)
-            df = pd.read_csv(file)
-            self.headers = df['column'].unique().tolist() 
 
     def _clean(self):
         if os.path.exists(OUTPUT_DIR):

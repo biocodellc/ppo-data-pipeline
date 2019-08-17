@@ -9,13 +9,14 @@ import multiprocessing
 import pandas as pd
 import numpy as np
 import sys
+sys.path.append('../')
+import config
 
 PROJECT = 'neon'
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
 OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
-CONFIG = os.path.join(ROOT_PATH, 'config')
 
 INTENSITY_FILE = os.path.join(os.path.dirname(__file__), 'intensity_values.csv')
 INTENSITY_VALUE_FRAME = pd.read_csv(INTENSITY_FILE, skipinitialspace=True, header=0) if os.path.exists(
@@ -79,7 +80,7 @@ class PreProcessor():
         data = data.merge(individuals, left_on=['individualID', 'namedLocation'],
                           right_on=['individualID', 'namedLocation'], how='left')
 
-        self._transform_data(data).to_csv(OUTPUT_FILE, columns=_parse_headers(self), mode='a', header=False, index=False)
+        self._transform_data(data).to_csv(OUTPUT_FILE, columns=config._parse_headers(self), mode='a', header=False, index=False)
 
         statusintensity_file.close()
         per_individual_file.close()
@@ -100,8 +101,8 @@ class PreProcessor():
 
         data['sub_source'] = ''
 
-        with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
-            print(data)
+        #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        #    print(data)
         # Populate dataframe with lower and upper count values based on intensity description
         df = data.merge(INTENSITY_VALUE_FRAME, left_on='phenophaseIntensity', right_on='value', how='left')
 
@@ -125,8 +126,8 @@ class PreProcessor():
 
         df = df.rename(columns=COLUMNS_MAP)
 
-        with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
-            print(df)
+        #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        #    print(df)
         return df
 
 
@@ -208,17 +209,6 @@ def generate_intensity_values(input_dir):
     intensity_frame.set_index('value', inplace=True)
 
     intensity_frame.to_csv(INTENSITY_FILE)
-
-# read the mapping.csv file and convert to a list to use as column headers
-# This replaces the need for a separate headers.csv file
-def _parse_headers(self):
-    file = os.path.join(CONFIG, 'mapping.csv')
-    if os.path.exists(file):
-       with open(file) as f:
-           reader = csv.reader(f, skipinitialspace=True)
-           self.headers = next(reader)
-       df = pd.read_csv(file)
-       self.headers = df['column'].unique().tolist()
 
 if __name__ == '__main__':
     PreProcessor().main()

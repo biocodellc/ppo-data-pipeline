@@ -1,0 +1,16 @@
+# Utilities for data pre-processing
+
+import os
+import csv
+import pandas as pd
+
+# read the mapping.csv file and convert to a list to use as column headers
+# This replaces the need for a separate headers.csv file
+def _parse_headers(self):
+    file = os.path.join(os.path.join('..', 'config'), 'mapping.csv')
+    if os.path.exists(file):
+       with open(file) as f:
+           reader = csv.reader(f, skipinitialspace=True)
+           self.headers = next(reader)
+       df = pd.read_csv(file)
+       self.headers = df['column'].unique().tolist()
