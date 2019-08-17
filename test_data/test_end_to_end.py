@@ -8,7 +8,8 @@ COLUMNS = ['dayOfYear','year','latitude','longitude','genus','specificEpithet','
 Message = ""
 
 # This script expected to executed from the ppo-data-pipeline root
-@pytest.mark.parametrize("project", [ "npn", "pep725", "herbarium", "neon"]) 
+#@pytest.mark.parametrize("project", [ "npn", "pep725", "herbarium", "neon"]) 
+@pytest.mark.parametrize("project", [ "npn"])
 def test_end_to_end(project):
     global Message
     #base_dir = os.path.dirname(__file__)

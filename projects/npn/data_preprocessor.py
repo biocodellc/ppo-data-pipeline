@@ -9,7 +9,7 @@ PROJECT = 'npn'
 
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
-OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'output')
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
 CONFIG = os.path.join(ROOT_PATH, 'config')
 
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')

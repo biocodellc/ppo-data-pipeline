@@ -9,14 +9,13 @@ if [[ -z $INPUT_DATAFILE ]] || [[ -z $OUTPUT_DIRECTORY ]]
      exit 0
 fi
 
-
 # check that we have the latest ...
 docker pull jdeck88/ontology-data-pipeline
 
 docker run -v "$(pwd)":/process -w=/app -i jdeck88/ontology-data-pipeline \
     python pipeline.py \
     -v --drop_invalid \
-    --data_file /process/$INPUT_DATAFILE \
+    /process/$INPUT_DATAFILE \
     /process/$OUTPUT_DIRECTORY \
     https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl \
     /process/config \
