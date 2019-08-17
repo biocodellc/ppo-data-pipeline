@@ -10,8 +10,12 @@ import pandas as pd
 import numpy as np
 import sys
 
-from preprocessor import AbstractPreProcessor
-
+PROJECT = 'neon'
+ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
+INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
+OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
+CONFIG = os.path.join(ROOT_PATH, 'config')
 
 INTENSITY_FILE = os.path.join(os.path.dirname(__file__), 'intensity_values.csv')
 INTENSITY_VALUE_FRAME = pd.read_csv(INTENSITY_FILE, skipinitialspace=True, header=0) if os.path.exists(
@@ -27,10 +31,10 @@ COLUMNS_MAP = {
     'decimalLongitude': 'longitude'
 }
 
-class PreProcessor(AbstractPreProcessor):
-    def _process_data(self):
+class PreProcessor():
+    def main(self):
         # loop all of the files in the NEON directory
-        for f in walk_files(self.input_dir):
+        for f in walk_files(INPUT_DIR):
             self._process_zip(f)
 
     def _process_zip(self, file):
@@ -75,7 +79,7 @@ class PreProcessor(AbstractPreProcessor):
         data = data.merge(individuals, left_on=['individualID', 'namedLocation'],
                           right_on=['individualID', 'namedLocation'], how='left')
 
-        self._transform_data(data).to_csv(self.output_file, columns=self.headers, mode='a', header=False, index=False)
+        self._transform_data(data).to_csv(OUTPUT_FILE, columns=_parse_headers(self), mode='a', header=False, index=False)
 
         statusintensity_file.close()
         per_individual_file.close()
@@ -205,3 +209,16 @@ def generate_intensity_values(input_dir):
 
     intensity_frame.to_csv(INTENSITY_FILE)
 
+# read the mapping.csv file and convert to a list to use as column headers
+# This replaces the need for a separate headers.csv file
+def _parse_headers(self):
+    file = os.path.join(CONFIG, 'mapping.csv')
+    if os.path.exists(file):
+       with open(file) as f:
+           reader = csv.reader(f, skipinitialspace=True)
+           self.headers = next(reader)
+       df = pd.read_csv(file)
+       self.headers = df['column'].unique().tolist()
+
+if __name__ == '__main__':
+    PreProcessor().main()
