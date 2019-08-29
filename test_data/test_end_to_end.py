@@ -9,13 +9,15 @@ Message = ""
 
 # This script expected to executed from the ppo-data-pipeline root
 #@pytest.mark.parametrize("project", [ "npn", "pep725", "herbarium", "neon"]) 
-@pytest.mark.parametrize("project", [ "npn"])
+@pytest.mark.parametrize("project", [ "image_scoring"])
 def test_end_to_end(project):
     global Message
     #base_dir = os.path.dirname(__file__)
 
     # set the project, always preceeded with test_
     project_name = project
+    # set the directory with preprocessing script
+    pre_processing_script = os.path.join('projects',project_name,'data_preprocessor.py')
     # set the project base dir
     project_base_dir = os.path.join('/','process','projects') 
     # set the project base, based on project name
@@ -23,10 +25,10 @@ def test_end_to_end(project):
     # set the project output path
     project_path = os.path.join(project_base_dir)
     # output directory
-    output_path = os.path.join('test_data',project_name,'output')
+    output_path = os.path.join('test_data',project_name,'processed')
     process_output_path = os.path.join('/','process',output_path)
     # input directory
-    input_path = os.path.join('/','process','test_data',project_name,'input')
+    input_file = os.path.join('/','process','test_data',project_name,'processed', 'data.csv')
     # path pointing to onfiguration files. we do not use the main project configuration directory 
     # for the application itself as that may contain changes we don't wish to test.
     # to test changes in configuration files the relevant config files should be copied here
@@ -52,10 +54,19 @@ def test_end_to_end(project):
     print("")
     print("commands that were run:")
 
+    print('running pre-processor')
+    cmd = [ 'python',pre_processing_script,'test']
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p_status = proc.wait()
+    print('\t'+subprocess.list2cmdline(cmd))
+
+    print('pulling latest docker')
     cmd = ['docker', 'pull', 'jdeck88/ontology-data-pipeline']
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print(subprocess.list2cmdline(cmd))
+    p_status = proc.wait()
+    print('\t'+subprocess.list2cmdline(cmd))
 
+    print('running pipeline')
     # run the test command in docker environment
     cmd = [
         'docker', 'run', '-v', docker_process, '-w=/app', '-i', 'jdeck88/ontology-data-pipeline', 
@@ -63,18 +74,12 @@ def test_end_to_end(project):
             'pipeline.py', 
             '-v', 
             '--drop_invalid', 
-            '--project', project_name, 
-            '--project_base', project_base_dir, 
-            '--input_dir', input_path,
-            process_output_path, ontology_url, config_path
+            input_file, process_output_path, ontology_url, config_path
             ]
 
     # setup process to execute given command
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-    print(subprocess.list2cmdline(cmd))
-
-
+    print('\t'+subprocess.list2cmdline(cmd))
     # output reresults from process
     
     stdout, stderr = proc.communicate()
@@ -88,6 +93,7 @@ def test_end_to_end(project):
     # wait for process to complete before continuing
     p_status = proc.wait()
 
+    print('running tests')
     # Simple test to make sure the program exited with a good status
     assert p_status==0
     
