@@ -4,6 +4,13 @@ import os
 import csv
 import pandas as pd
 
+DATA_DIR_NAME = ''
+try:
+    if (sys.argv[1] == "test"):
+        DATA_DIR_NAME = 'test_data'
+except:
+    DATA_DIR_NAME = 'data'
+
 # read the mapping.csv file and convert to a list to use as column headers
 # This replaces the need for a separate headers.csv file
 def _parse_headers(self):
