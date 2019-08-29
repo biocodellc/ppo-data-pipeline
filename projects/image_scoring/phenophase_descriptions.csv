@@ -1,5 +1,10 @@
-field,defined_by,lower,upper
-flowers present,{flower presence},1,
-flowers absent,{flower presence},,0
-open flowers present,{open flower presence},1,
-open flowers absent,{open flower presence},,0
+﻿whole_plant_s,flowers_s,open_flowers_s,lower_count_partplant,upper_count_partplant,lower_count_wholeplant,upper_count_wholeplant,phenophase_name
+-,-,open flowers present,1,,1,,{open flower presence}
+U,flowers absent,open flowers absent,,0,,,{flower presence}
+whole plant absent,flowers absent,open flowers absent,,0,,,{flower presence}
+whole plant absent,flowers present,U,1,,1,,{flower presence}
+whole plant present,flowers absent,U,,0,,0,{flower presence}
+whole plant present,flowers absent,open flowers absent,,0,,0,{flower presence}
+whole plant present,flowers present,U,1,,1,,{flower presence}
+whole plant present,flowers present,open flowers absent,1,,1,,{unopened flower presence}
+whole plant absent,flowers present,open flowers absent,1,,1,,{unopened flower presence}

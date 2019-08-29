@@ -1,25 +1,29 @@
 # -*- coding: utf-8 -*-
 
-"""proprocessor.AbstractPreProcessor implementation for preprocessing image_scoring data"""
-
+# processing specific builds
 import re, uuid
 import os,csv
-#import multiprocessing
 import pandas as pd
 import math
 import sys
 import numpy as np
-sys.path.append('../')
-import config 
 
+# Set the project name
 PROJECT = 'image_scoring'
+
+#### BEGIN section that should be common to all projects ####
+# appending paths so can run either in current directory or from ppo-data-pipeline root
+sys.path.append('../')
+sys.path.append('./projects/')
+import config 
+from config import DATA_DIR_NAME
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
-INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
-OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
+INPUT_DIR = os.path.join(ROOT_PATH,DATA_DIR_NAME, PROJECT, 'input')
+OUTPUT_DIR = os.path.join(ROOT_PATH, DATA_DIR_NAME, PROJECT, 'processed')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
+#### END section that should be common to all projects ####
+
 PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
-FILE_PREFIX = "image_scoring_"
-DATA_FILE = os.path.join(FILE_PREFIX+'_data.csv')
 
 class PreProcessor():
 
@@ -32,7 +36,13 @@ class PreProcessor():
 
         data = pd.read_csv(os.path.join(INPUT_DIR, "image_scoring.csv"), header=0, engine='python' )
 
-        print ("transforming data....")
+        print ("cleaning out old file....")
+        try:
+            os.remove(OUTPUT_FILE)
+        except: 
+            print ("\tnothing to clean....")
+        
+        print ("transforming data and writing file....")
         self._transform_data(data).to_csv(OUTPUT_FILE, columns=config._parse_headers(self), mode='w', header=True, index=False)
 
     def _transform_data(self, data):
@@ -55,54 +65,19 @@ class PreProcessor():
         # Specify source as Herbarium
         data['source'] = 'IMAGE SCORING'
 
-        rows_list = []
-        count = 0
-        for i, j in data.iterrows(): 
-            count = count + 1
-            dict1 = {}
-            j['phenophase_name'] = j['flowers']
-            j['record_id'] = count
-            dict1.update(j)
-            rows_list.append(dict1)
 
-            count = count + 1
-            dict2 = {}
-            j['phenophase_name'] = j['open_flowers']
-            j['record_id'] = count
-            dict2.update(j)
-            rows_list.append(dict2)
-            
-        # create a new data frame from the rows_list array
-        newData = pd.DataFrame(rows_list) 
-        newData= newData.drop("flowers", axis=1)
-        newData= newData.drop("open_flowers", axis=1)
-
-        # Set default lower and upper counts
-        data = newData.apply(lambda row: self._set_defaults(row), axis=1)
-
+        #data = data.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')
+        #whole_plant_s,flowers_s,open_flowers_s,lower count part plant,upper count part plant,lower count whole plant,upper count whole plant,trait
+        data = data.merge(self.descriptions, how='left', left_on=['whole_plant_s','flowers_s','open_flowers_s'], right_on=['whole_plant_s','flowers_s','open_flowers_s'])
+        
         # As far as i know these are all unique individuals
-        data['individualID'] = data.apply(lambda x: uuid.uuid4(), axis=1)
+        #data['individualID'] = data.apply(lambda x: uuid.uuid4(), axis=1)
+        data['individualID'] = np.arange(len(data))
+        # Assign UUID for each unique record
+        #data['record_id'] = data.apply(lambda x: uuid.uuid4(), axis=1)
+        data['record_id'] = np.arange(len(data))
 
         return data
-
-    def _set_defaults(self, row):
-        try:
-            if (row['whole_plant'] == "whole plant present"):
-                row['lower_count_wholeplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_name']]['lower'].values[0]
-                row['upper_count_wholeplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_name']]['upper'].values[0]
-                row['lower_percent_wholeplant'] = np.nan
-                row['upper_percent_wholeplant'] = np.nan 
-            else:
-                row['lower_count_partplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_name']]['lower'].values[0]
-                row['lower_count_wholeplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_name']]['lower'].values[0]
-                row['upper_count_partplant'] = self.descriptions[self.descriptions['field'] == row['phenophase_name']]['upper'].values[0]
-                row['lower_percent_partplant'] = np.nan
-                row['upper_percent_partplant'] = np.nan
-        except IndexError:
-            # thrown if missing phenophase_description in phenophase_descriptions.csv file
-            pass
-
-        return row
 
 if __name__ == '__main__':
     PreProcessor().main()
