@@ -5,28 +5,11 @@ This repository stores configuration information for running the [ontology-data-
 # Installation/Setup
 [Install docker](https://docs.docker.com/install/) and then clone this repository.  Please refer to the Docker documentation itself if you have troubles getting your docker instance to run.  Once docker is running, you can enter the following:
 ```
-./run_test_docker.sh npn
+pytest
 ```
 
-The above runs a small test project through the pipeline... you should see output that looks like:
+The above runs tests for at least one of the projects and will confirm if things are working
 
-```
-configuring...
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): raw.githubusercontent.com:443
-DEBUG:urllib3.connectionpool:https://raw.githubusercontent.com:443 "GET /PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl HTTP/1.1" 200 88716
-DEBUG:root:	validating 1 records
-DEBUG:root:	triplifying 1 records
-DEBUG:root:	running reasoner on data_1.ttl
-DEBUG:root:reasoning on file /process/test_data/npn/output/output_unreasoned/data_1.ttl
-DEBUG:root:running reasonder with:
-DEBUG:root:java -jar /app/process/../lib/ontopilot-2019-01-15.jar -i /process/test_data/npn/output/output_unreasoned/data_1.ttl -o /process/test_data/npn/output/output_reasoned/data_1.ttl -c /process/config/reasoner.conf inference_pipeline
-INFO:root:reasoned output at test_data/npn/output/output_reasoned/data_1.ttl
-DEBUG:root:	running csv2reasoner on data_1.ttl
-DEBUG:root:converting reasoned data to csv for file /process/test_data/npn/output/output_reasoned/data_1.ttl
-DEBUG:root:running query_fetcher with:
-DEBUG:root:java -jar /app/process/../lib/query_fetcher-0.0.1.jar -i /process/test_data/npn/output/output_reasoned/data_1.ttl -inputFormat TURTLE -o /process/test_data/npn/output/output_reasoned_csv -numThreads 1 -sparql /process/config/fetch_reasoned.sparql
-INFO:root:b'    writing /process/test_data/npn/output/output_reasoned_csv/data_1.ttl.csv\n'
-INFO:root:reasoned_csv output at test_data/npn/output/output_reasoned_csv/data_1.ttl.csv
 ```
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
