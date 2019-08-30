@@ -8,3 +8,5 @@ whole plant present,flowers absent,open flowers absent,,0,,0,{flower presence}
 whole plant present,flowers present,U,1,,1,,{flower presence}
 whole plant present,flowers present,open flowers absent,1,,1,,{unopened flower presence}
 whole plant absent,flowers present,open flowers absent,1,,1,,{unopened flower presence}
+whole plant present,flowers present,open flowers absent,,0,,0,{open flower presence}
+whole plant absent,flowers present,open flowers absent,,0,,,{open flower presence}

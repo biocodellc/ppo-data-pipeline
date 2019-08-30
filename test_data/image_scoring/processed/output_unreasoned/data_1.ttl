@@ -68,26 +68,27 @@
 <urn:partPlantStructurePresence/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:phenologicalObservingProcess/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/EventID> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "30.734176300000005"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-98.37177419"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/year> "2017"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "212"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "32.66898593"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-97.43453768"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "62"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/2> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/2> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
-<urn:partPlantMeasurementDatum/2> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:partPlantMeasurementDatum/2> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
 <urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/specificEpithet> "constricta"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca constricta"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/specificEpithet> "pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/2> <http://rs.tdwg.org/dwc/terms/individualID> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
+<urn:wholePlantMeasurementDatum/2> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
 <urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/specificEpithet> "constricta"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca constricta"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/specificEpithet> "pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/2> <http://rs.tdwg.org/dwc/terms/individualID> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/2> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/2> .
@@ -101,27 +102,27 @@
 <urn:partPlantStructurePresence/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:phenologicalObservingProcess/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/EventID> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "32.66898593"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-97.43453768"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "31.99088833"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-110.844445"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "62"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "65"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/3> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/3> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
-<urn:partPlantMeasurementDatum/3> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:partPlantMeasurementDatum/3> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
 <urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/specificEpithet> "pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/specificEpithet> "elata"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca elata"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/3> <http://rs.tdwg.org/dwc/terms/individualID> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
-<urn:wholePlantMeasurementDatum/3> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:wholePlantMeasurementDatum/3> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
 <urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/specificEpithet> "pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca pallida"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/specificEpithet> "elata"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca elata"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/3> <http://rs.tdwg.org/dwc/terms/individualID> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/3> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/3> .
@@ -135,8 +136,8 @@
 <urn:partPlantStructurePresence/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:phenologicalObservingProcess/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/EventID> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "31.99088833"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-110.844445"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "34.34790063"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-106.8812871"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "65"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/4> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
@@ -146,16 +147,16 @@
 <urn:partPlantMeasurementDatum/4> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
 <urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/specificEpithet> "elata"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca elata"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/4> <http://rs.tdwg.org/dwc/terms/individualID> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
 <urn:wholePlantMeasurementDatum/4> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
 <urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/specificEpithet> "elata"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca elata"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/4> <http://rs.tdwg.org/dwc/terms/individualID> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/4> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/4> .
@@ -169,10 +170,10 @@
 <urn:partPlantStructurePresence/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:phenologicalObservingProcess/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/EventID> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "34.34790063"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-106.8812871"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "36.95022"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-113.7930217"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "65"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "67"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/5> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/5> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
@@ -180,16 +181,16 @@
 <urn:partPlantMeasurementDatum/5> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
 <urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/5> <http://rs.tdwg.org/dwc/terms/individualID> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
 <urn:wholePlantMeasurementDatum/5> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
 <urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/5> <http://rs.tdwg.org/dwc/terms/individualID> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/5> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/5> .
@@ -200,30 +201,30 @@
 <urn:wholePlantStructurePresence/5> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/5> .
 <urn:wholePlantStructurePresence/5> <http://purl.obolibrary.org/obo/RO_0000080> <urn:wholePlant/5> .
 <urn:partPlant/5> <http://purl.obolibrary.org/obo/PPO_0000015> <urn:wholePlant/5> .
-<urn:partPlantStructurePresence/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
+<urn:partPlantStructurePresence/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:phenologicalObservingProcess/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/EventID> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "36.95022"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-113.7930217"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "67"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "33.79112167"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-117.6599583"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "28"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/6> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/6> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlantStructurePresence/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
+<urn:wholePlantStructurePresence/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:partPlantMeasurementDatum/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
-<urn:partPlantMeasurementDatum/6> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:partPlantMeasurementDatum/6> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
-<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/genus> "Hesperoyucca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/scientificName> "Hesperoyucca whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/6> <http://rs.tdwg.org/dwc/terms/individualID> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
-<urn:wholePlantMeasurementDatum/6> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:wholePlantMeasurementDatum/6> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
-<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/genus> "Hesperoyucca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/scientificName> "Hesperoyucca whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/6> <http://rs.tdwg.org/dwc/terms/individualID> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/6> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/6> .
@@ -234,30 +235,30 @@
 <urn:wholePlantStructurePresence/6> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/6> .
 <urn:wholePlantStructurePresence/6> <http://purl.obolibrary.org/obo/RO_0000080> <urn:wholePlant/6> .
 <urn:partPlant/6> <http://purl.obolibrary.org/obo/PPO_0000015> <urn:wholePlant/6> .
-<urn:partPlantStructurePresence/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
+<urn:partPlantStructurePresence/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:phenologicalObservingProcess/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/EventID> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "34.01186388"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-116.168305"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "72"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "33.79112167"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-117.6599583"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "28"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/7> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/7> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlantStructurePresence/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
+<urn:wholePlantStructurePresence/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:partPlantMeasurementDatum/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
-<urn:partPlantMeasurementDatum/7> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:partPlantMeasurementDatum/7> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
-<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/specificEpithet> "schidigera"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca schidigera"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/genus> "Hesperoyucca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/scientificName> "Hesperoyucca whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/7> <http://rs.tdwg.org/dwc/terms/individualID> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
-<urn:wholePlantMeasurementDatum/7> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:wholePlantMeasurementDatum/7> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
-<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/specificEpithet> "schidigera"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca schidigera"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/genus> "Hesperoyucca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/scientificName> "Hesperoyucca whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/7> <http://rs.tdwg.org/dwc/terms/individualID> "7"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/7> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/7> .
@@ -271,27 +272,27 @@
 <urn:partPlantStructurePresence/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:phenologicalObservingProcess/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/EventID> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "36.95073346"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-113.7932482"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "67"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "33.72115833"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-116.8026617"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "29"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/8> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/8> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:partPlantMeasurementDatum/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
 <urn:partPlantMeasurementDatum/8> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
-<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/genus> "Testius"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/scientificName> "Testius whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/8> <http://rs.tdwg.org/dwc/terms/individualID> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
 <urn:wholePlantMeasurementDatum/8> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
-<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/specificEpithet> "brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca brevifolia"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/genus> "Testius"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/scientificName> "Testius whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/8> <http://rs.tdwg.org/dwc/terms/individualID> "8"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/8> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/8> .
@@ -302,30 +303,29 @@
 <urn:wholePlantStructurePresence/8> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:wholePlantMeasurementDatum/8> .
 <urn:wholePlantStructurePresence/8> <http://purl.obolibrary.org/obo/RO_0000080> <urn:wholePlant/8> .
 <urn:partPlant/8> <http://purl.obolibrary.org/obo/PPO_0000015> <urn:wholePlant/8> .
-<urn:partPlantStructurePresence/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
+<urn:partPlantStructurePresence/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:phenologicalObservingProcess/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0007004> .
 <urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/EventID> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "47.55097167"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-111.167795"^^<http://www.w3.org/2001/XMLSchema#float> .
-<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/year> "2017"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "204"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/decimalLatitude> "33.72115833"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-116.8026617"^^<http://www.w3.org/2001/XMLSchema#float> .
+<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "29"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/9> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/9> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlantStructurePresence/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
+<urn:wholePlantStructurePresence/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:partPlantMeasurementDatum/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
-<urn:partPlantMeasurementDatum/9> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<urn:partPlantMeasurementDatum/9> <http://purl.obolibrary.org/obo/PPO_0000002> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlant/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PO_0000003> .
-<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/genus> "Testius"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/scientificName> "Testius whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlant/9> <http://rs.tdwg.org/dwc/terms/individualID> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:wholePlantMeasurementDatum/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000027> .
-<urn:wholePlantMeasurementDatum/9> <http://purl.obolibrary.org/obo/PPO_0000001> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlant/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0001053> .
-<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/genus> "Yucca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/specificEpithet> "glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/scientificName> "Yucca glauca"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/genus> "Testius"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/specificEpithet> "whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/scientificName> "Testius whipplei"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/basisOfRecord> "HumanObservation"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:partPlant/9> <http://rs.tdwg.org/dwc/terms/individualID> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:partPlantStructurePresence/9> <http://purl.obolibrary.org/obo/PPO_0000008> <urn:partPlantMeasurementDatum/9> .

@@ -1,11 +1,9 @@
 observation_id,observationSource,imageSource,basisOfRecord,scientificName,genus,species,year,month,day,day_of_year,latitude,longitude,whole_plant_s,flowers_s,open_flowers_s,scoring
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca glauca,Yucca,glauca,2017,7,23,204,47.55097167,-111.167795,-,-,open flowers present,consensus
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca glauca,Yucca,glauca,2017,7,23,204,47.55097167,-111.167795,U,flowers absent,open flowers absent,consensus
-,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca constricta,Yucca,constricta,2017,7,31,212,30.7341763,-98.37177419,whole plant absent,flowers absent,open flowers absent,reconciled
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca pallida,Yucca,pallida,2018,3,3,62,32.66898593,-97.43453768,whole plant absent,flowers present,U,consensus
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca elata,Yucca,elata,2018,3,6,65,31.99088833,-110.844445,whole plant present,flowers absent,U,consensus
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca glauca,Yucca,glauca,2018,3,6,65,34.34790063,-106.8812871,whole plant present,flowers absent,open flowers absent,consensus
 ,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca brevifolia,Yucca,brevifolia,2018,3,8,67,36.95022,-113.7930217,whole plant present,flowers absent,open flowers absent,reconciled
-,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca schidigera,Yucca,schidigera,2018,3,13,72,34.01186388,-116.168305,whole plant present,flowers present,U,consensus
-,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca brevifolia,Yucca,brevifolia,2018,3,8,67,36.95073346,-113.7932482,whole plant present,flowers present,open flowers absent,reconciled
-,University of Florida Guralnick Lab,testRecord,HumanObservation,Yucca glauca,Yucca,glauca,2017,7,23,204,47.55097167,-111.167795,whole plant absent,flowers present,open flowers absent,consensus
+,University of Florida Guralnick Lab,testRecord,HumanObservation,Hesperoyucca whipplei,Hesperoyucca,whipplei,2019,1,28,28,33.79112167,-117.6599583,whole plant present,flowers present,open flowers absent,consensus
+,University of Florida Guralnick Lab,testRecord,HumanObservation,Testius whipplei,Testius,whipplei,2019,1,29,29,33.72115833,-116.8026617,whole plant absent,flowers present,open flowers absent,consensus
