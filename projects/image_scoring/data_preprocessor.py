@@ -63,7 +63,7 @@ class PreProcessor():
         data['scientific_name'] = data['genus'] + ' ' + data['specific_epithet']
 
         # Specify source as Herbarium
-        data['source'] = 'IMAGE SCORING'
+        data['source'] = 'IMAGE_SCORING'
 
 
         #data = data.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')

@@ -1,6 +1,9 @@
 data/*
 **/*.pyc
+**/*.swp
 **/.cache/*
 output/
 **/__pycache__/*
 .python-version
+output.txt
+output.txt.err

@@ -5,7 +5,7 @@
 <urn:phenologicalObservingProcess/0> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-111.167795"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/0> <http://rs.tdwg.org/dwc/terms/year> "2017"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/0> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "204"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/0> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/0> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/0> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:partPlantMeasurementDatum/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -39,7 +39,7 @@
 <urn:phenologicalObservingProcess/1> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-111.167795"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/1> <http://rs.tdwg.org/dwc/terms/year> "2017"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/1> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "204"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/1> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/1> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/1> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -72,7 +72,7 @@
 <urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-97.43453768"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/2> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "62"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/2> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/2> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/2> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -106,7 +106,7 @@
 <urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-110.844445"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/3> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "65"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/3> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/3> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/3> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -140,7 +140,7 @@
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-106.8812871"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/4> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "65"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/4> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/4> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/4> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -174,7 +174,7 @@
 <urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-113.7930217"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/year> "2018"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/5> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "67"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/5> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/5> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/5> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002032> .
 <urn:partPlantMeasurementDatum/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -208,7 +208,7 @@
 <urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-117.6599583"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/6> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "28"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/6> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/6> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/6> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:partPlantMeasurementDatum/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -242,7 +242,7 @@
 <urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-117.6599583"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/7> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "28"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/7> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/7> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/7> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:partPlantMeasurementDatum/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -276,7 +276,7 @@
 <urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-116.8026617"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/8> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "29"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/8> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/8> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/8> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002034> .
 <urn:partPlantMeasurementDatum/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .
@@ -310,7 +310,7 @@
 <urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/decimalLongitude> "-116.8026617"^^<http://www.w3.org/2001/XMLSchema#float> .
 <urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/year> "2019"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <urn:phenologicalObservingProcess/9> <http://rs.tdwg.org/dwc/terms/startDayOfYear> "29"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<urn:phenologicalObservingProcess/9> <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:phenologicalObservingProcess/9> <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:phenologicalObservingProcess/9> <urn:subSource> "testRecord"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:wholePlantStructurePresence/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/PPO_0002035> .
 <urn:partPlantMeasurementDatum/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/IAO_0000109> .

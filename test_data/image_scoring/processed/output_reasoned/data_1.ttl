@@ -598,7 +598,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 204 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2017 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/1
@@ -617,7 +617,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 204 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2017 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/2
@@ -636,7 +636,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 62 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2018 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/3
@@ -655,7 +655,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 65 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2018 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/4
@@ -674,7 +674,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 65 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2018 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/5
@@ -693,7 +693,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 67 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2018 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/6
@@ -712,7 +712,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 28 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2019 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/7
@@ -731,7 +731,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 28 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2019 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/8
@@ -750,7 +750,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 29 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2019 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:phenologicalObservingProcess/9
@@ -769,7 +769,7 @@ rdf:type rdf:type owl:DatatypeProperty ;
                                      <http://rs.tdwg.org/dwc/terms/startDayOfYear> 29 ;
                                      <http://rs.tdwg.org/dwc/terms/year> 2019 ;
                                      <urn:subSource> "testRecord"^^xsd:string ;
-                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE SCORING"^^xsd:string .
+                                     <http://purl.org/dc/elements/1.1/creator> "IMAGE_SCORING"^^xsd:string .
 
 
 ###  urn:wholePlant/0
