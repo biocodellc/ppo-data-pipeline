@@ -1,4 +1,13 @@
 field,defined_by,lower_count_partplant,upper_count_partplant,lower_percent_partplant,upper_percent_partplant,lower_count_wholeplant,upper_count_wholeplant,lower_percent_wholeplant,upper_percent_wholeplant,notes
+"3 side shoots visible, G: 3 tillers visible",{mature true leaf presence},1,,,,1,,,,
+autumnal colouration >=20%,{senescing true leaf presence},,,20,,,,20,,
+autumnal colouration >=30%,{senescing true leaf presence},,,30,,,,30,,
+autumnal colouration >=40%,{senescing true leaf presence},,,40,,,,40,,
+autumnal colouration >=50%,{senescing true leaf presence},,,50,,,,50,,
+autumnal colouration >=60%,{senescing true leaf presence},,,60,,,,60,,
+autumnal colouration >=70%,{senescing true leaf presence},,,70,,,,70,,
+autumnal colouration >=80%,{senescing true leaf presence},,,80,,,,80,,
+Nearly all fruits have reached final size,{ripening fruit presence},1,,,,1,,,,
 Harvest,,,,,,,,,,Ellen: not sure this assignment is valid since abscission was not natural but caused by humans. Perhaps {ripening fruit presence} is better?
 50 % autumnal leaf fall,{abscised leaf presence},,,50,,,,50,,
 autumnal leaf fall: >=20% of leaves fallen,{abscised leaf presence},,,20,,,,20,,
