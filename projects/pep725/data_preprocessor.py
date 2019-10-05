@@ -67,7 +67,7 @@ class PreProcessor():
                 OUTPUT_FILE, 
                 columns=config._parse_headers(self), 
                 mode='a', 
-                header=False, 
+                header=True, 
                 index=False)
 
 
