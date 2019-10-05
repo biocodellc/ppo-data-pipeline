@@ -18,7 +18,7 @@ COLUMNS_MAP = {
     'day': 'day_of_year',
     'lat': 'latitude',
     'lon': 'longitude',
-    'description': 'phenophase_name'
+    'defined_by': 'phenophase_name'
 }
 FILES = {
     'data': FILE_PREFIX + 'data.csv',
@@ -61,6 +61,8 @@ class PreProcessor():
         data = pd.read_csv(os.path.join(INPUT_DIR,FILES['data']), sep=';', header=0,
                            usecols=['s_id', 'genus_id', 'species_id', 'phase_id', 'year', 'day'],
                            skipinitialspace=True,dtype='object', chunksize= chunk_size)
+
+        open(OUTPUT_FILE, 'w').close()
 
         for chunk in data:
             self._transform_data(chunk).to_csv(
