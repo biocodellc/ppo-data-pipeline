@@ -1,6 +1,6 @@
 # ppo-data-pipeline
 
-This repository stores configuration information for running the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) for Plant Phenology Data and alignment with the [Plant Phenology Ontology](https://github.com/PlantPhenoOntology/ppo).  To get started, choose either the "Docker Method" or "Non-Docker Method" below: 
+Process data for the [Global Plant Phenology Data Portal](https://plantphenology.org/).  This repository accumulates data from partners, processes it (in python) and then runs the [ontology-data-pipeline](https://github.com/biocodellc/ontology-data-pipeline) to process inferences and aggregate data. The pipeline calls the [Plant Phenology Ontology](https://github.com/PlantPhenoOntology/ppo) for term annotation.  
 
 # Installation/Setup
 [Install docker](https://docs.docker.com/install/) and then clone this repository.  Please refer to the Docker documentation itself if you have troubles getting your docker instance to run.  Once docker is running, you can enter the following:
@@ -38,29 +38,27 @@ INFO:root:reasoned_csv output at test_data/image_scoring/processed/output_reason
 
 End to end data driven testing is run from the root level directory in the repository using ```pytest```
 
-
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
-If all of the tests pass, you can started processing each project
+If all of the tests pass, you can started processing each project.  Following is an example using NPN data:
 
 ```
 # process NPN data
 cd projects/npn
 # fetch NPN data and store in data/npn/input/
 python data_fetcher.py
+
+# first make sure the 'processed' directory exists under /data/npn/.  If not, then create it:
+mkdir ../../data/npn/processed
+
 # pre-process NPN data, specifying the chunk-size to use in pre-processor (suggest 50,000)
 # stores output data/npn/output/data.csv
 python data_preprocessor.py 50000
+
 # run the pipeline
 cd ../..
-./run.sh data/npn/output/data.csv data/npn/output
 
-# process PEP725 data
-./run.sh pep725 
-# process neon data
-./run.sh neon
-# process herbarium data
-./run.sh herbarium
+./run.sh data/npn/processed/data.csv data/npn/processed
 ```
 
 # Updating data
@@ -74,6 +72,12 @@ python data_fetcher.py  ../../data/neon/input
 # updating npn
 cd projects/npn
 python data_fetcher.py  ../../data/npn/input
+```
+
+# Loading Data
+If you choose to load data into an elasticsearch instance, you can run the loader script
+```
+./loader.sh
 ```
 
 Some information about the ppo-data-pipeline is mentioned in:
