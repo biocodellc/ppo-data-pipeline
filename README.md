@@ -74,7 +74,7 @@ python data_preprocessor.py 150000
 # run the pipeline
 cd ../..
 
-./run.sh data/npn/processed/data.csv data/npn/processed
+./run.sh npn
 ```
 
 
