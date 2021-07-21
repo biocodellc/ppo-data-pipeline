@@ -40,26 +40,7 @@ End to end data driven testing is run from the root level directory in the repos
 
 You can find the docker image at [Docker Hub](https://cloud.docker.com/u/jdeck88/repository/docker/jdeck88/ontology-data-pipeline)
 
-If all of the tests pass, you can started processing each project.  Following is an example using NPN data:
-
-```
-# process NPN data
-cd projects/npn
-# fetch NPN data and store in data/npn/input/
-python data_fetcher.py
-
-# first make sure the 'processed' directory exists under /data/npn/.  If not, then create it:
-mkdir ../../data/npn/processed
-
-# pre-process NPN data, specifying the chunk-size to use in pre-processor (suggest 50,000)
-# stores output data/npn/output/data.csv
-python data_preprocessor.py 50000
-
-# run the pipeline
-cd ../..
-
-./run.sh data/npn/processed/data.csv data/npn/processed
-```
+If all of the tests pass, you can started processing each project.  
 
 # Updating data
 Some of the projects contain scripts which help you fetch data from source API's.  You will need to run these scripts using python:
@@ -73,6 +54,30 @@ python data_fetcher.py  ../../data/neon/input
 cd projects/npn
 python data_fetcher.py  ../../data/npn/input
 ```
+
+# Pre-processing data
+
+Following is an example using NPN data:
+
+```
+# process NPN data
+# This assumes that you have data processed and living in ../../data/npn/processed
+cd projects/npn
+
+# first make sure the 'processed' directory exists under /data/npn/.  If not, then create it:
+mkdir ../../data/npn/processed
+
+# pre-process NPN data, specifying the chunk-size to use in pre-processor (suggest 50,000)
+# stores output data/npn/output/data.csv
+python data_preprocessor.py 150000
+
+# run the pipeline
+cd ../..
+
+./run.sh data/npn/processed/data.csv data/npn/processed
+```
+
+
 
 # Loading Data
 If you choose to load data into an elasticsearch instance, you can run the loader script
