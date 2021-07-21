@@ -75,6 +75,9 @@ python data_preprocessor.py 150000
 cd ../..
 
 ./run.sh npn
+
+# or, you can use
+# ./non_docker_run.sh npn
 ```
 
 
