@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-"""preprocessor.AbstractPreProcessor implementation for preprocessing neon data"""
-
 import os, csv, argparse
 from zipfile import ZipFile
 import logging
@@ -23,11 +19,16 @@ INTENSITY_VALUE_FRAME = pd.read_csv(INTENSITY_FILE, skipinitialspace=True, heade
     INTENSITY_FILE) else None
 INTENSITY = 0
 PHENO_DESC = 1
+PHENO_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
+PHENO_VALUE_FRAME = pd.read_csv(PHENO_FILE, skipinitialspace=True, header=0) if os.path.exists(
+    PHENO_FILE) else None
 COLUMNS_MAP = {
     'uid': 'record_id',
     'dayOfYear': 'day_of_year',
     'scientificName': 'scientific_name',
     'phenophaseName': 'phenophase_name',
+    'phenophaseStatus': 'phenophase_status',
+    'phenophaseIntensity': 'phenophase_intensity',
     'decimalLatitude': 'latitude',
     'decimalLongitude': 'longitude'
 }
@@ -35,10 +36,12 @@ COLUMNS_MAP = {
 class PreProcessor():
     def main(self):
         # loop all of the files in the NEON directory
+        count = 0
         for f in walk_files(INPUT_DIR):
-            self._process_zip(f)
+            self._process_zip(f, count)
+            count = count + 1
 
-    def _process_zip(self, file):
+    def _process_zip(self, file, count):
         statusintensity_file = None
         per_individual_file = None
 
@@ -80,7 +83,10 @@ class PreProcessor():
         data = data.merge(individuals, left_on=['individualID', 'namedLocation'],
                           right_on=['individualID', 'namedLocation'], how='left')
 
-        self._transform_data(data).to_csv(OUTPUT_FILE, columns=config._parse_headers(self), mode='a', header=False, index=False)
+        if (count == 0):
+            self._transform_data(data).to_csv(OUTPUT_FILE, mode='w', header=True, index=False)
+        else:
+            self._transform_data(data).to_csv(OUTPUT_FILE, mode='a', header=False, index=False)
 
         statusintensity_file.close()
         per_individual_file.close()
@@ -101,8 +107,10 @@ class PreProcessor():
 
         data['sub_source'] = ''
 
-        #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
-        #    print(data)
+        # merge phenphase_description file eith data fram
+        data = data.merge(PHENO_VALUE_FRAME, left_on='phenophaseName', right_on='field', how='left')
+        data['phenophaseName'] = data.loc[:,'defined_by'] 
+
         # Populate dataframe with lower and upper count values based on intensity description
         df = data.merge(INTENSITY_VALUE_FRAME, left_on='phenophaseIntensity', right_on='value', how='left')
 
@@ -123,6 +131,8 @@ class PreProcessor():
 
 
         df = df.fillna('')  # replace all null values
+
+        pd.options.mode.chained_assignment = None
 
         df = df.rename(columns=COLUMNS_MAP)
 

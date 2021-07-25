@@ -76,8 +76,8 @@ cd ../..
 
 ./run.sh npn
 
-# or, you can use
-# ./non_docker_run.sh npn
+# or, you can use the non-docker version of the pipeline (requiring local installations of required libraries):
+ ./non_docker_run.sh npn
 ```
 
 
@@ -85,6 +85,12 @@ cd ../..
 # Loading Data
 If you choose to load data into an elasticsearch instance, you can run the loader script
 ```
+# if you are running on a desktop and want to load from a remote server, you will want to execute
+# a command similar to this:
+cd data
+tar zcvf - PROJECT/processed/output_reasoned_csv/* | ssh jdeck@biscicol.org "cd /home/jdeck/data/ppo; tar xvzf -"
+
+# ssh to remote server, checkout a copy of this code and run:
 ./loader.sh
 ```
 

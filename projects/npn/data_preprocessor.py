@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+
 # Code to pre-process NPN data and reading for processing
 import argparse
 import os, csv, shutil
+import sys
 import multiprocessing 
 import pandas as pd
 sys.path.append('../')
@@ -11,22 +13,22 @@ PROJECT = 'npn'
 ROOT_PATH = os.path.join(os.path.dirname(__file__), '../../')
 INPUT_DIR = os.path.join(ROOT_PATH,'data', PROJECT, 'input')
 OUTPUT_DIR = os.path.join(ROOT_PATH, 'data', PROJECT, 'processed')
-PHENOPHASE_DESCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
+PHENO_FILE = os.path.join(os.path.dirname(__file__), 'phenophase_descriptions.csv')
+PHENO_VALUE_FRAME = pd.read_csv(PHENO_FILE, header=0, skipinitialspace=True) if os.path.exists(PHENO_FILE) else None
 DATASET_METADATA_FILE = os.path.join(os.path.dirname(__file__), 'ancillary_dataset_data.csv')
 INPUT_FILE = os.path.join(INPUT_DIR, 'npn_observations_data.csv')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 COLUMNS_MAP = {
         'observation_id': 'record_id',
         'species': 'specific_epithet',
-        'defined_by': 'phenophase_name',
         'Source': 'sub_source'
         }
+        #'defined_by': 'phenophase_name',
 
 class PreProcessor():
 
     def __init__(self):
-        self.descriptions = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object')
-        self.traits = pd.read_csv(PHENOPHASE_DESCRIPTIONS_FILE, header=0, skipinitialspace=True, dtype='object', usecols=['field','defined_by'])
+        self.descriptions = pd.read_csv(PHENO_FILE, header=0, skipinitialspace=True, dtype='object')
 
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
                 usecols=['Dataset_ID', 'Source'], dtype='object')
@@ -42,6 +44,10 @@ class PreProcessor():
 
         args = parser.parse_args()
         self.chunk_size = args.chunk_size
+
+        # trucnate OUTPUT_FILE file
+        #with open(OUTPUT_FILE, 'r+') as f:
+        #    f.truncate(0)
         self.run()
 
     def run(self):
@@ -58,7 +64,7 @@ class PreProcessor():
         count = 0
         for chunk in data:
 
-            chunks = [chunk.ix[chunk.index[i:i + self.chunk_size]] for i in
+            chunks = [chunk.loc[chunk.index[i:i + self.chunk_size]] for i in
                 range(0, chunk.shape[0], self.chunk_size)]
 
             writeHeader = False
@@ -88,7 +94,7 @@ class PreProcessor():
     def _transform_chunk(self, listchunk, writeHeader):
        chunk = listchunk[0]
        print("\tprocessing next {} records".format(len(chunk)))
-       self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=config._parse_headers(), mode='a', header=writeHeader, index=False)
+       self._transform_data(chunk).to_csv(OUTPUT_FILE, columns=config._parse_headers(self), mode='a', header=writeHeader, index=False)
 
     def _transform_data(self, data):
         # Add an index name
@@ -96,6 +102,9 @@ class PreProcessor():
 
         # drop all records where the user is unsure of what was coded (this is phenophase_status = -1)
         data = data[data.phenophase_status != '-1']
+        pd.options.mode.chained_assignment = None
+
+        #data['phenophase_description'] = '{' + data.loc[:,'phenophase_description'] + '}'
 
         # Handle cases where we want to force a default intensity value.  These are annotated in the 
         # phenophase_descrptions file and indicated by force_default = true
@@ -112,6 +121,7 @@ class PreProcessor():
         # when intensity_value field is not filled out (value of -9999) set upper/lower counts from descriptions table
         # Counts are set conditionally based on presence or absence of trait marked by phenophase_status
         # this part is SLOW...................
+        data = data.dropna(subset=['phenophase_status'])
         data = data.apply(lambda row: self._set_defaults(row), axis=1)
 
 
@@ -119,9 +129,16 @@ class PreProcessor():
         data['source'] = 'USA-NPN'
         data['basis_of_record'] = 'HumanObservation'
         data = data.merge(self.dataset_metadata, left_on='dataset_id', right_on='Dataset_ID', how='left')
-        data = data.merge(self.traits, left_on='phenophase_description', right_on='field', how='left')
+        #data = data.merge(self.traits, left_on='phenophase_description', right_on='field', how='left')
+        data = data.merge(PHENO_VALUE_FRAME, left_on='phenophase_description', right_on='field', how='left')
+        data['phenophase_name'] = data.loc[:,'defined_by']
+        #data=data.rename(columns = {'phenophase_description':'phenophase_name'})
         del data['field']
-
+        del data['defined_by']
+        
+        # drop rows where definition is not mapped
+        #data = data[data.phenophase_name != 'Agreed to not map this definition']
+        data = data[data.phenophase_name.notna()]
         # Normalize Date to just Year. we don't need to store actual date because we use only Year + DayOfYear
         data['year'] = pd.DatetimeIndex(data['observation_date']).year
 
@@ -154,6 +171,7 @@ class PreProcessor():
 
     # For any column with a -9999 in the intensity_value column, insert default values from the phenophase_descriptions sheet
     def _set_defaults(self, row):
+
         if row.intensity_value != '-9999':
             return row
         try:
@@ -162,7 +180,11 @@ class PreProcessor():
                 row['upper_percent_partplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_absent'].values[0])
                 row['lower_percent_wholeplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_absent'].values[0])
                 row['upper_percent_wholeplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_absent'].values[0])
+                #row['lower_percent'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_absent'].values[0])
+                #row['upper_percent'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_absent'].values[0])
             else:
+                #row['lower_percent'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_present'].values[0])
+                #row['upper_percent'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_present'].values[0])
                 row['lower_percent_partplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_present'].values[0])
                 row['upper_percent_partplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['upper_percent_present'].values[0])
                 row['lower_percent_wholeplant'] = float(self.descriptions[self.descriptions['field'] == row['phenophase_description']]['lower_percent_present'].values[0])
