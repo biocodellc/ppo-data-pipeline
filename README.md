@@ -91,7 +91,7 @@ cd data
 tar zcvf - PROJECT/processed/output_reasoned_csv/* | ssh jdeck@biscicol.org "cd /home/jdeck/data/ppo; tar xvzf -"
 
 # ssh to remote server, checkout a copy of this code and run:
-./loader.sh
+./loadit.sh
 ```
 
 Some information about the ppo-data-pipeline is mentioned in:
