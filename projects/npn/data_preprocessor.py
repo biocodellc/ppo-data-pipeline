@@ -21,7 +21,7 @@ OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'data.csv')
 COLUMNS_MAP = {
         'observation_id': 'record_id',
         'species': 'specific_epithet',
-        'Source': 'sub_source'
+        'Dataset_Name': 'sub_source'
         }
         #'defined_by': 'phenophase_name',
 
@@ -31,7 +31,7 @@ class PreProcessor():
         self.descriptions = pd.read_csv(PHENO_FILE, header=0, skipinitialspace=True, dtype='object')
 
         self.dataset_metadata = pd.read_csv(DATASET_METADATA_FILE, header=0, skipinitialspace=True,
-                usecols=['Dataset_ID', 'Source'], dtype='object')
+                usecols=['Dataset_ID', 'Dataset_Name'], dtype='object')
 
         self.num_processes = multiprocessing.cpu_count()
         # default chunk_size

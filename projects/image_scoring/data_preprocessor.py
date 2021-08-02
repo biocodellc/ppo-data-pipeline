@@ -52,7 +52,6 @@ class PreProcessor():
         # rename incoming columns
         data = data.rename(index=str,columns={
             "observationSource":"institution_code",
-            "imageSource":"sub_source",
             "basisOfRecord":"basis_of_record",
             "species":"specific_epithet"})
 
@@ -76,6 +75,7 @@ class PreProcessor():
         # Assign UUID for each unique record
         #data['record_id'] = data.apply(lambda x: uuid.uuid4(), axis=1)
         data['record_id'] = np.arange(len(data))
+        data['occurrenceID'] = data['imageSource']
 
         return data
 
