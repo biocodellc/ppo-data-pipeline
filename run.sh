@@ -1,4 +1,5 @@
 PROJECT=$1
+
 if [[ -z $PROJECT ]]
    then
      echo "Usage: run.sh {PROJECT}"
@@ -15,5 +16,6 @@ docker run -v "$(pwd)":/process -w=/app -i jdeck88/ontology-data-pipeline \
     -v --drop_invalid \
     /process/data/$PROJECT/processed/data.csv \
     /process/data/$PROJECT/processed \
-    https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2018-10-26/ppo.owl \
+    https://raw.githubusercontent.com/PlantPhenoOntology/ppo/master/releases/2019-01-16/ppo.owl \
     /process/config \
+

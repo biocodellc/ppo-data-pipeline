@@ -7,6 +7,8 @@ if [[ -z $PROJECT ]]
      exit 0
 fi
 
+echo "processing incoming data file data/$PROJECT/processed/data.csv" 
+
     python ../ontology-data-pipeline/pipeline.py \
     -v --drop_invalid \
     data/$PROJECT/processed/data.csv \

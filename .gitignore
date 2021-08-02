@@ -7,3 +7,4 @@ output/
 .python-version
 output.txt
 output.txt.err
+config/tmp/*
