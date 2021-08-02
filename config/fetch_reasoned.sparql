@@ -10,7 +10,7 @@ prefix urn: <urn:>
 
 # Use the concat/group_concat function to push all plantStructurePresence types into an array within a field.
 # this enables ElasticSearch to index this easily while shrinking output file sizes
-SELECT  (?phenologicalObservingProcess as ?eventId) ?dayOfYear ?year ?latitude ?longitude ?genus ?specificEpithet ?scientificName ?basisOfRecord ?individualID ?eventRemarks ?lower_count_partplant ?upper_count_partplant ?lower_count_wholeplant ?upper_count_wholeplant ?lower_percent_partplant ?upper_percent_partplant ?lower_percent_wholeplant ?upper_percent_wholeplant ?source ?subSource (group_concat(distinct ?traitTypes;separator='|') as ?plantStructurePresenceTypes) 
+SELECT  (?phenologicalObservingProcess as ?eventId) ?dayOfYear ?year ?latitude ?longitude ?genus ?specificEpithet ?scientificName ?basisOfRecord ?individualID ?occurrenceID ?eventRemarks ?lower_count_partplant ?upper_count_partplant ?lower_count_wholeplant ?upper_count_wholeplant ?lower_percent_partplant ?upper_percent_partplant ?lower_percent_wholeplant ?upper_percent_wholeplant ?source ?subSource (group_concat(distinct ?traitTypes;separator='|') as ?plantStructurePresenceTypes) 
 
 WHERE {    
 
@@ -45,6 +45,7 @@ WHERE {
         OPTIONAL {?wholePlant dwc:scientificName ?scientificName} . 
         OPTIONAL {?wholePlant dwc:basisOfRecord ?basisOfRecord} . 
         OPTIONAL {?wholePlant dwc:individualID ?individualID} . 
+        OPTIONAL {?wholePlant dwc:occurrenceID ?occurrenceID} . 
 
         # PhenologicalObservingProcess Attributes
         ?phenologicalObservingProcess dwc:startDayOfYear ?dayOfYear .
@@ -65,5 +66,5 @@ WHERE {
         OPTIONAL {?wholePlantMeasurementDatum obo:PPO_0000003 ?lower_percent_wholeplant} .
         OPTIONAL {?wholePlantMeasurementDatum obo:PPO_0000004 ?upper_percent_wholeplant} .
 }
-GROUP BY ?phenologicalObservingProcess ?dayOfYear ?year ?latitude ?longitude ?genus ?specificEpithet ?scientificName ?basisOfRecord ?individualID ?eventRemarks ?lower_count_partplant ?upper_count_partplant ?lower_count_wholeplant ?upper_count_wholeplant ?lower_percent_partplant ?upper_percent_partplant ?lower_percent_wholeplant ?upper_percent_wholeplant ?source ?subSource 
+GROUP BY ?phenologicalObservingProcess ?dayOfYear ?year ?latitude ?longitude ?genus ?specificEpithet ?scientificName ?basisOfRecord ?individualID ?occurrenceID ?eventRemarks ?lower_count_partplant ?upper_count_partplant ?lower_count_wholeplant ?upper_count_wholeplant ?lower_percent_partplant ?upper_percent_partplant ?lower_percent_wholeplant ?upper_percent_wholeplant ?source ?subSource 
 ORDER BY ASC(?phenologyObservingProcess)
