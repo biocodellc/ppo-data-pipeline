@@ -147,6 +147,8 @@ class PreProcessor():
 
         # drop duplicate ObservationIDs
         data.drop_duplicates('observation_id', inplace=True)
+        # prepend ARK root to observation_id to form occurrenceID
+        data['occurrenceID'] = 'http://n2t.net/ark:/21547/Amg2' + data['observation_id']
 
         # filling in remaining column names, even though there is no data
         data['individualID'] = ''
