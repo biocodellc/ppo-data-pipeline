@@ -11,6 +11,7 @@ echo "processing incoming data file data/$PROJECT/processed/data.csv"
 
     python ../ontology-data-pipeline/pipeline.py \
     -v --drop_invalid \
+    --num_processes 1 \
     data/$PROJECT/processed/data.csv \
     data/$PROJECT/processed \
     file:/Users/jdeck/IdeaProjects/ppo-data-pipeline/config/ppo.owl \

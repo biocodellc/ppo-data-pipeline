@@ -88,7 +88,7 @@ If you choose to load data into an elasticsearch instance, you can run the loade
 # if you are running on a desktop and want to load from a remote server, you will want to execute
 # a command similar to this:
 cd data
-tar zcvf - PROJECT/processed/output_reasoned_csv/* | ssh jdeck@biscicol.org "cd /home/jdeck/data/ppo; tar xvzf -"
+tar zcvf - data/npn/processed/output_reasoned_csv/* | ssh -l exouser 149.165.159.216 "cd /home/jdeck/data/ppo; tar xvzf -"
 
 # ssh to remote server, checkout a copy of this code and run:
 ./loadit.sh
