@@ -182,7 +182,7 @@ args = parser.parse_args()
 project = args.project
 drop_existing= args.drop_existing
 
-data_dir = '/home/exouser/data/ppo/'+project+'/processed/output_reasoned_csv'
+data_dir = '/home/exouser/data/'+project+'/processed/output_reasoned_csv'
 index = 'ppo'
 alias = 'ppo'
 host =  'tarly.cyverse.org:80'
