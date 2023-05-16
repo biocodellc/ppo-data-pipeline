@@ -11,7 +11,7 @@ idna==2.8
 ipython-genutils==0.2.0
 Jinja2==2.10
 jsonschema==3.0.0
-jupyter-core==4.4.0
+jupyter-core==4.11.2
 lineedit==0.1.6
 lxml==4.6.3
 MarkupSafe==1.1.1
