@@ -51,7 +51,7 @@ class ESLoader(object):
         # Create lookup file for mapping trait URIs to trait Labels
 
         self.lookup= dict()
-        with urllib.request.urlopen("https://plantphenology.org/api/v2/ppo/all") as url:
+        with urllib.request.urlopen("https://biscicol.org/api/v2/ppo/all") as url:
             data = json.loads(url.read().decode())
             for trait in data:
                 self.lookup[trait['termID']] = trait['label']
@@ -182,7 +182,7 @@ args = parser.parse_args()
 project = args.project
 drop_existing= args.drop_existing
 
-data_dir = '/home/jdeck/data/ppo/'+project+'/processed/output_reasoned_csv'
+data_dir = '/home/exouser/data/ppo/'+project+'/processed/output_reasoned_csv'
 index = 'ppo'
 alias = 'ppo'
 host =  'tarly.cyverse.org:80'
