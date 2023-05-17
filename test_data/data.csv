@@ -1,0 +1,3 @@
+genus,specific_epithet,record_id,observation_date,dataset_id,day_of_year,intensity_value,latitude,longitude,phenophase_description,phenophase_status,source,basis_of_record,Notes,phenophase_name,year,scientific_name,occurrenceID,individualID
+Acer,saccharum,170081,2009-04-09,-9999,99,-9999,43.085350,-70.691330,Full flowering (50%),0,USA-NPN,HumanObservation,,{open flowers absent},2009,Acer saccharum,http://n2t.net/ark:/21547/Amg2170081,
+Acer,saccharum,170091,2009-04-04,-9999,94,-9999,43.085350,-70.691330,Full flowering (50%),0,USA-NPN,HumanObservation,,{open flowers absent},2009,Acer saccharum,http://n2t.net/ark:/21547/Amg2170091,

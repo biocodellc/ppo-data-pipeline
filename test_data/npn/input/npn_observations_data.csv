@@ -1,4 +1,0 @@
-genus,species,observation_id,observation_date,dataset_id,day_of_year,intensity_value,latitude,longitude,phenophase_description,phenophase_status
-Yucca,elata,1,2017-01-02,-9999,2,-9999,33.761490,-111.842232,Flowers or flower buds,0
-Yucca,elata,2,2017-01-02,-9999,2,-9999,33.761490,-111.842232,Flowers or flower buds,-1
-Yucca,elata,3,2017-01-02,-9999,2,some,33.761490,-111.842232,Flowers or flower buds,1
