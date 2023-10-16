@@ -6,7 +6,7 @@ year,http://rs.tdwg.org/dwc/terms/year,phenologicalObservingProcess,
 day_of_year,http://rs.tdwg.org/dwc/terms/startDayOfYear,phenologicalObservingProcess,
 source,http://purl.org/dc/elements/1.1/creator,phenologicalObservingProcess,
 sub_source,urn:subSource,phenologicalObservingProcess,
-phenophase_description,http://rs.tdwg.org/dwc/terms/eventRemarks,phenologicalObservingProcess
+phenophase_description,http://rs.tdwg.org/dwc/terms/eventRemarks,phenologicalObservingProcess,
 genus,http://rs.tdwg.org/dwc/terms/genus,wholePlant,
 specific_epithet,http://rs.tdwg.org/dwc/terms/specificEpithet,wholePlant,
 occurrenceID,http://rs.tdwg.org/dwc/terms/occurrenceID,wholePlant,
