@@ -18,7 +18,7 @@ MarkupSafe==1.1.1
 nbformat==4.4.0
 numpy==1.16.1
 openpyxl==3.0.7
-OWSLib==0.17.1
+OWSLib==0.28.1
 pandas==1.1.5
 pipreqs==0.4.11
 plotly==3.6.1
