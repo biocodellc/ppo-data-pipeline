@@ -16,7 +16,7 @@ lineedit==0.1.6
 lxml==4.6.3
 MarkupSafe==1.1.1
 nbformat==4.4.0
-numpy==1.16.1
+numpy==1.22.0
 openpyxl==3.0.7
 OWSLib==0.17.1
 pandas==1.1.5
