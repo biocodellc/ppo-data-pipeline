@@ -32,7 +32,7 @@ pytz==2018.9
 PyYAML==3.13
 radian==0.5.11
 rchitect==0.3.32
-requests==2.21.0
+requests==2.31.0
 retrying==1.3.3
 rfc3987==1.3.8
 Shapely==1.6.4.post2
